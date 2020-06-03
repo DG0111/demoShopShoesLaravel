@@ -19,7 +19,7 @@
 
 7. `php artisan migrate` in ra cơ sở dữ liệu
 
-8. `php artisan db:seer` in ra dữ liệu mẫu
+8. `php artisan db:seed` in ra dữ liệu mẫu
 
 9. `npm install`
 

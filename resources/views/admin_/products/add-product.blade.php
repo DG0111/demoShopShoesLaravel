@@ -107,7 +107,7 @@
                                     type="number"
                                     class="form-control">
                             </div>
-                            <span class="text-danger">{{$errors->first('size_id')}}
+                            <span class="text-danger">{{$errors->first('size')}}
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
@@ -123,93 +123,111 @@
                                     <td>35</td>
                                     <td>4.5</td>
                                     <td>
-                                        <input type="checkbox" name="size_id[]" @if(is_array(old('size_id')) && in_array(35, old('size_id'))) checked @endif value="35">
+                                        <input type="checkbox" name="size[]"
+                                               @if(is_array(old('size')) && in_array(35, old('size'))) checked
+                                               @endif value="35">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>36</td>
                                     <td>5.5</td>
                                     <td>
-                                        <input type="checkbox" name="size_id[]" @if(is_array(old('size_id')) && in_array(36, old('size_id'))) checked @endif value="36">
+                                        <input type="checkbox" name="size[]"
+                                               @if(is_array(old('size')) && in_array(36, old('size'))) checked
+                                               @endif value="36">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>37</td>
                                     <td>6.5</td>
                                     <td>
-                                        <input type="checkbox" name="size_id[]" @if(is_array(old('size_id')) && in_array(37, old('size_id'))) checked @endif value="37">
+                                        <input type="checkbox" name="size[]"
+                                               @if(is_array(old('size')) && in_array(37, old('size'))) checked
+                                               @endif value="37">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>38</td>
                                     <td>7.5</td>
                                     <td>
-                                        <input type="checkbox" name="size_id[]" @if(is_array(old('size_id')) && in_array(38, old('size_id'))) checked @endif value="38">
+                                        <input type="checkbox" name="size[]"
+                                               @if(is_array(old('size')) && in_array(38, old('size'))) checked
+                                               @endif value="38">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>39</td>
                                     <td>8.5</td>
                                     <td>
-                                        <input type="checkbox" name="size_id[]" @if(is_array(old('size_id')) && in_array(39, old('size_id'))) checked @endif value="39">
+                                        <input type="checkbox" name="size[]"
+                                               @if(is_array(old('size')) && in_array(39, old('size'))) checked
+                                               @endif value="39">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>40</td>
                                     <td>9.5</td>
                                     <td>
-                                        <input type="checkbox" name="size_id[]" @if(is_array(old('size_id')) && in_array(40, old('size_id'))) checked @endif value="40">
+                                        <input type="checkbox" name="size[]"
+                                               @if(is_array(old('size')) && in_array(40, old('size'))) checked
+                                               @endif value="40">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>41</td>
                                     <td>10.5</td>
                                     <td>
-                                        <input type="checkbox" name="size_id[]" @if(is_array(old('size_id')) && in_array(41, old('size_id'))) checked @endif value="41">
+                                        <input type="checkbox" name="size[]"
+                                               @if(is_array(old('size')) && in_array(41, old('size'))) checked
+                                               @endif value="41">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>42</td>
                                     <td>11.5</td>
                                     <td>
-                                        <input type="checkbox" name="size_id[]" @if(is_array(old('size_id')) && in_array(42, old('size_id'))) checked @endif value="42">
+                                        <input type="checkbox" name="size[]"
+                                               @if(is_array(old('size')) && in_array(42, old('size'))) checked
+                                               @endif value="42">
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>43</td>
                                     <td>12</td>
                                     <td>
-                                        <input type="checkbox" name="size_id[]" @if(is_array(old('size_id')) && in_array(43, old('size_id'))) checked @endif value="43">
+                                        <input type="checkbox" name="size[]"
+                                               @if(is_array(old('size')) && in_array(43, old('size'))) checked
+                                               @endif value="43">
                                     </td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="steps clearfix">
-                            <ul role="tablist">
-                                <li role="tab" class="first current" aria-disabled="false" aria-selected="true">
-                                    <div class="card">
-                                        <h3>Preview Image</h3>
-                                        <div class="card-body" id="showImage">
-                                        </div>
+                    <div class="steps clearfix">
+                        <ul role="tablist">
+                            <li role="tab" class="first current" aria-disabled="false" aria-selected="true">
+                                <div class="">
+                                    <h3>Preview Image</h3>
+                                    <div class="" id="showImage">
                                     </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="actions clearfix">
-                            <ul role="menu" aria-label="Pagination">
-                                <li class="disabled" aria-disabled="true">
-                                    <a href="{{url()->previous()}}" role="menuitem">Back</a>
-                                </li>
-                                <li aria-hidden="false" aria-disabled="false">
-                                    <button type="submit" class="btn btn-facebook" role="menuitem">Save</button>
-                                </li>
-                            </ul>
-                        </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                </form>
+                    <div class="actions clearfix">
+                        <ul role="menu" aria-label="Pagination">
+                            <li class="disabled" aria-disabled="true">
+                                <a href="{{url()->previous()}}" role="menuitem">Back</a>
+                            </li>
+                            <li aria-hidden="false" aria-disabled="false">
+                                <button type="submit" class="btn btn-facebook" role="menuitem">Save</button>
+                            </li>
+                        </ul>
+                    </div>
             </div>
+            </form>
         </div>
+    </div>
     </div>
 
 @stop
@@ -227,106 +245,106 @@
 
 
         function toggle(source) {
-            let checkboxes = document.getElementsByName('size_id[]');
+            let checkboxes = document.getElementsByName('size[]');
             for (let k = 0, n = checkboxes.length; k < n; k++) {
                 checkboxes[k].checked = source.checked;
             }
         }
 
 
-        // $(".formAddProduct").validate({
-        //     debug: false,
-        //     errorClass: "authError",
-        //     errorElement: "span",
-        //     rules: {
-        //         name: {
-        //             required: true,
-        //             minlength: 6,
-        //             maxlength: 50
-        //         },
-        //         description: {
-        //             required: true,
-        //             minlength: 6,
-        //         },
-        //         price: {
-        //             required: true,
-        //             min: 0,
-        //             number: true
-        //         },
-        //         promotion_price: {
-        //             min: 0,
-        //             number: true
-        //         },
-        //         quantity: {
-        //             required: true,
-        //             min: 0,
-        //             number: true
-        //         }
-        //     },
-        //     messages: {
-        //         name: {
-        //             required: 'Sản phẩm phải có tên nhé !',
-        //             minlength: 'Quá ÍT kí tự !',
-        //             maxlength: 'Quá NHIỀU kí tự !',
-        //         },
-        //         description: {
-        //             required: 'Sản phẩm phải có mô tả nhé !',
-        //             minlength: 'Mỏ tả quá ÍT kí tự !',
-        //         },
-        //         price: {
-        //             required: 'Sản phẩm phải có giá nhé !',
-        //             min: 'Gía âm rồi kia ! Thích gửi giầy còn gửi thêm cho người ta tiền à ?',
-        //             number: 'Chữ số nhé !'
-        //         },
-        //         promotion_price: {
-        //             min: 'Giảm thì cũng đừng có cho tiền người ta chứ',
-        //             number: 'Chữ số nhé !',
-        //         },
-        //         quantity: {
-        //             required: 'Số lượng sản phẩm là bao nhiểu ?',
-        //             min: 'Số lượng âm thì chịu rồi',
-        //             number: 'Chữ số nhé !'
-        //         }
-        //     }
-        // });
+        $(".formAddProduct").validate({
+            debug: false,
+            errorClass: "authError",
+            errorElement: "span",
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 6,
+                    maxlength: 50
+                },
+                description: {
+                    required: true,
+                    minlength: 6,
+                },
+                price: {
+                    required: true,
+                    min: 0,
+                    number: true
+                },
+                promotion_price: {
+                    min: 0,
+                    number: true
+                },
+                quantity: {
+                    required: true,
+                    min: 0,
+                    number: true
+                }
+            },
+            messages: {
+                name: {
+                    required: 'Sản phẩm phải có tên nhé !',
+                    minlength: 'Quá ÍT kí tự !',
+                    maxlength: 'Quá NHIỀU kí tự !',
+                },
+                description: {
+                    required: 'Sản phẩm phải có mô tả nhé !',
+                    minlength: 'Mỏ tả quá ÍT kí tự !',
+                },
+                price: {
+                    required: 'Sản phẩm phải có giá nhé !',
+                    min: 'Gía âm rồi kia ! Thích gửi giầy còn gửi thêm cho người ta tiền à ?',
+                    number: 'Chữ số nhé !'
+                },
+                promotion_price: {
+                    min: 'Giảm thì cũng đừng có cho tiền người ta chứ',
+                    number: 'Chữ số nhé !',
+                },
+                quantity: {
+                    required: 'Số lượng sản phẩm là bao nhiểu ?',
+                    min: 'Số lượng âm thì chịu rồi',
+                    number: 'Chữ số nhé !'
+                }
+            }
+        });
 
-        //
-        // let inputFile = document.querySelector('#inputFile');
-        // let showImage = document.querySelector('#showImage');
-        // inputFile.onchange = () => {
-        //     let file = document.querySelector('#inputFile')['files'];
-        //
-        //     let inputImageText = document.querySelector('#inputImageText');
-        //     if (file.length > 7) {
-        //         Swal.fire('Bạn chỉ được phép chọn 7 ảnh sản phẩm !!!');
-        //         document.querySelector('#inputFile').value = "";
-        //         showImage.innerHTML = '';
-        //     } else {
-        //         showImage.innerHTML = '';
-        //         var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
-        //
-        //         for (var j = 0; j < file.length; j++) {
-        //             if (!allowedExtensions.exec(file[j].name)) {
-        //                 Swal.fire('Bạn chọn sai tệp (jpg/jpeg/png) !!!');
-        //                 document.querySelector('#inputFile').value = "";
-        //                 showImage.innerHTML = '';
-        //             }
-        //         }
-        //         ;
-        //
-        //         for (var i = 0; i < file.length; i++) {
-        //             let reader = new FileReader();
-        //             let baseString;
-        //             reader.onloadend = function () {
-        //                 baseString = reader.result;
-        //                 showImage.innerHTML += `
-        //                 <img class="m-1" width="100px" src="${baseString}" alt="">
-        //         `;
-        //             };
-        //             reader.readAsDataURL(file[i]);
-        //         }
-        //     }
-        // }
+
+        let inputFile = document.querySelector('#inputFile');
+        let showImage = document.querySelector('#showImage');
+        inputFile.onchange = () => {
+            let file = document.querySelector('#inputFile')['files'];
+
+            let inputImageText = document.querySelector('#inputImageText');
+            if (file.length > 7) {
+                Swal.fire('Bạn chỉ được phép chọn 7 ảnh sản phẩm !!!');
+                document.querySelector('#inputFile').value = "";
+                showImage.innerHTML = '';
+            } else {
+                showImage.innerHTML = '';
+                var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+
+                for (var j = 0; j < file.length; j++) {
+                    if (!allowedExtensions.exec(file[j].name)) {
+                        Swal.fire('Bạn chọn sai tệp (jpg/jpeg/png) !!!');
+                        document.querySelector('#inputFile').value = "";
+                        showImage.innerHTML = '';
+                    }
+                }
+                ;
+
+                for (var i = 0; i < file.length; i++) {
+                    let reader = new FileReader();
+                    let baseString;
+                    reader.onloadend = function () {
+                        baseString = reader.result;
+                        showImage.innerHTML += `
+                        <img class="m-1" width="100px" src="${baseString}" alt="">
+                `;
+                    };
+                    reader.readAsDataURL(file[i]);
+                }
+            }
+        }
 
     </script>
 @stop

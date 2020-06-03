@@ -20,7 +20,6 @@ class ProductController extends Controller
     public function index()
     {
         $pro = Product::select()
-            ->join("images", "images.product_id", "=", "products.id")
             ->orderBy('products.created_at', 'desc')
             ->paginate(10);
 
@@ -36,7 +35,7 @@ class ProductController extends Controller
     {
         $cate = Category::all();
 
-        return view('admin_.products.add-product',compact('cate'));
+        return view('admin_.products.add-product', compact('cate'));
     }
 
     /**
@@ -47,18 +46,40 @@ class ProductController extends Controller
      */
     public function store(CreateProduct $request)
     {
-        $validated = $request->validated();
-
-        dd($request->size_id);
-
+        // product
         $product = new Product;
-
         $product->name = $request->name;
         $product->price = $request->price;
         $product->category_id = $request->category_id;
         $product->description = $request->description;
         $product->promotion_price = $request->promotion_price;
         $product->quantity = $request->quantity;
+        $product->status = 1;
+        $product->slug = Product::slugify($request->name);
+        $product->save();
+        $productNew = Product::select('id')->where('name', '=', $request->name)->get(); //sản phẩm vừa thêm
+        $idProduct = $productNew[0]->id;
+
+        //image
+//        $image = new Image;
+//        $files = $request->image_id;
+
+        foreach ($request->file('image_id') as $file) {
+            $name = time() . '.' . $file->getClientOriginalName();
+            $file->move(public_path() . '/files/', $name);
+            $image = new Image;
+            $image->product_id = $idProduct;
+            $image->url = $name;
+            $image->save();
+        }
+
+        foreach ($request->size as $value) {
+            $size = new Size;
+            $size->size = $value;
+            $size->product_id = $idProduct;
+            $size->save();
+        }
+
     }
 
     /**
@@ -80,7 +101,13 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cate = Category::all();
+        $pro = Product::find($id);
+
+        foreach ($pro->sizes as $sizes) {
+            $size [] = $sizes->size;
+        }
+        return view('admin_/products/edit-product', compact('pro', 'cate', 'size'));
     }
 
     /**
@@ -90,9 +117,39 @@ class ProductController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateProduct $request, $id)
     {
-        //
+        // product
+        $product = Product::find($id);
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->category_id = $request->category_id;
+        $product->description = $request->description;
+        $product->promotion_price = $request->promotion_price;
+        $product->quantity = $request->quantity;
+        $product->status = 1;
+        $product->slug = Product::slugify($request->name);
+        $product->save();
+        //image
+
+        $imageDelete = Image::where('product_id','=',$id)->delete();
+        $sizeDelete = Size::where('product_id','=',$id)->delete();
+
+        foreach ($request->file('image_id') as $file) {
+            $name = time() . '.' . $file->getClientOriginalName();
+            $file->move(public_path() . '/files/', $name);
+            $image = new Image;
+            $image->product_id = $id;
+            $image->url = $name;
+            $image->save();
+        }
+
+        foreach ($request->size as $value) {
+            $size = new Size;
+            $size->product_id = $id;
+            $size->size = $value;
+            $size->save();
+        }
     }
 
     /**

@@ -7,9 +7,6 @@
                     <div>
                         <h3>Product</h3>
                     </div>
-                    {{--        <div>--}}
-                    {{--            search--}}
-                    {{--        </div>--}}
                     <table class="table table-striped">
                         <thead>
                         <tr>
@@ -19,6 +16,7 @@
                             <th> Category</th>
                             <th> Images</th>
                             <th> Create at</th>
+                            <th> Size</th>
                             <th>Status</th>
                             <th></th>
                         </tr>
@@ -27,16 +25,24 @@
                         @if(!empty($pro) && $pro->count())
                             @foreach($pro as $value)
                                 <tr>
-                                    <td> {{$value->name}} </td>
-                                    <td> VNĐ {{number_format($value->price, 0, '', ',')}} </td>
-                                    <td> {{$value->quantity}} </td>
-                                    <td> {{$value->category->name}} </td>
+                                    <td style="font-size: 12px"> {{$value->name}} </td>
+                                    <td style="font-size: 12px"> VNĐ {{number_format($value->price, 0, '', ',')}} </td>
+                                    <td style="font-size: 12px"> {{$value->quantity}} </td>
+                                    <td style="font-size: 12px"> {{$value->categories->name}} </td>
                                     {{--                        Định nghĩa relationships--}}
                                     <td><img style="width: 100px;height: 100px;border-radius: 0;"
-                                             src="{{$value->image->url}}"></td>
+                                             src="{{asset('files/'.$value->image->url)}}"></td>
+                                    {{--                                    quan hệ 1 nhiều :(--}}
                                     {{--                        Định nghĩa relationships--}}
-                                    <td> {{$value->created_at}} </td>
+                                    <td style="font-size: 12px"> {{$value->created_at}} </td>
                                     <td>
+                                        <select>
+                                            @foreach($value->sizes as $size)
+                                                <option value="">{{$size->size}}</option>
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                    <td style="font-size: 12px">
                                         @if(number_format($value->quantity) <= 0)
                                             <label class="badge badge-danger">Hết Hàng</label>
                                         @else
@@ -45,12 +51,13 @@
                                     </td>
                                     <td>
                                         <div class="row mt-1">
-                                            <a href="" class="btn btn-warning">Edit</a>
+                                            <a style="font-size: 12px" href="{{url('admin/product/'.$value->id.'/edit')}}" class="btn btn-warning">Edit</a>
                                         </div>
                                         <div class="row mt-1">
                                             <form class="delete" action="{{ url('admin/product/'.$value->id) }}"
                                                   method="post">
                                                 <input
+                                                    style="font-size: 12px"
                                                     id="delete"
                                                     class="btn btn-default btn-danger"
                                                     type="submit"
@@ -61,7 +68,7 @@
                                             </form>
                                         </div>
                                         <div class="row mt-1">
-                                            <a href="{{route('detailProduct',$value->slug)}}" class="btn btn-facebook">View</a>
+                                            <a style="font-size: 12px" href="{{route('detailProduct',$value->slug)}}" class="btn btn-facebook">View</a>
                                         </div>
                                     </td>
                                 </tr>

@@ -24,16 +24,16 @@ class CreateProduct extends FormRequest
     public function rules()
     {
         return [
-            'category_id' => 'required|integer',
-            'name' => 'required|max:50|min:6',
-            'description' => 'required|max:255|min:6',
-            'price' => 'required|min:0',
-            'promotion_price' => 'min:0',
-            'quantity' => 'required|min:0',
-            'image_id' => 'required',
-            'image_id.*' => 'image|mimes:jpg,jpeg|max:2048',
-            'size_id.*' => 'integer',
-            'size_id' => 'required'
+//            'category_id' => 'required|integer',
+//            'name' => 'required|max:50|min:6',
+//            'description' => 'required|max:255|min:6',
+//            'price' => 'required|min:0',
+//            'promotion_price' => 'min:0',
+//            'quantity' => 'required|min:0',
+//            'image_id' => 'required',
+//            'image_id.*' => 'image|mimes:jpg,jpeg|max:2048',
+//            'size.*' => 'integer',
+//            'size' => 'required'
         ];
 
     }

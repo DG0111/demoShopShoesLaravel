@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CheckFormAddProduct;
+use App\Http\Requests\CheckFormEditProduct;
 use App\Http\Requests\CreateProduct;
 use App\Image;
 use App\Product;
@@ -44,7 +46,7 @@ class ProductController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateProduct $request)
+    public function store(CheckFormAddProduct $request)
     {
         // product
         $product = new Product;
@@ -80,6 +82,9 @@ class ProductController extends Controller
             $size->save();
         }
 
+
+        return redirect('admin/product')->with( ['data' => 'Thêm Sản Phẩm Thành Công ^)^'] );
+
     }
 
     /**
@@ -104,6 +109,10 @@ class ProductController extends Controller
         $cate = Category::all();
         $pro = Product::find($id);
 
+        if($pro == null) {
+            return redirect('admin/product')->with( ['data' => 'Sai thông tin sản phẩm cần sửa'] );
+        }
+
         foreach ($pro->sizes as $sizes) {
             $size [] = $sizes->size;
         }
@@ -117,10 +126,15 @@ class ProductController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateProduct $request, $id)
+    public function update(CheckFormEditProduct $request, $id)
     {
         // product
         $product = Product::find($id);
+
+        if($product == null) {
+            return redirect('admin/product')->with( ['data' => 'Sửa Sản Phẩm Thất Bại ^)^'] );
+        }
+
         $product->name = $request->name;
         $product->price = $request->price;
         $product->category_id = $request->category_id;
@@ -132,8 +146,8 @@ class ProductController extends Controller
         $product->save();
         //image
 
-        $imageDelete = Image::where('product_id','=',$id)->delete();
-        $sizeDelete = Size::where('product_id','=',$id)->delete();
+        $imageDelete = Image::where('product_id', '=', $id)->delete();
+        $sizeDelete = Size::where('product_id', '=', $id)->delete();
 
         foreach ($request->file('image_id') as $file) {
             $name = time() . '.' . $file->getClientOriginalName();
@@ -150,6 +164,8 @@ class ProductController extends Controller
             $size->size = $value;
             $size->save();
         }
+
+        return redirect('admin/product')->with( ['data' => 'Sửa Sản Phẩm Thành Công ^)^'] );
     }
 
     /**
@@ -160,9 +176,16 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        Image::where('product_id', $id)->delete();
-        Size::where('product_id', $id)->delete();
-        Product::destroy($id);
-        return redirect('admin/product');
+
+        $pro = Product::find($id);
+
+        if($pro == null) {
+            return redirect()->back()->with( ['data' => 'Xóa Sản Phẩm thất bại !!!'] );
+        }
+
+        $pro::destroyImageSize();
+        $pro->delete();
+        return redirect('admin/product')->with( ['data' => 'Xóa Sản Phẩm Thành Công ^)^'] );
+
     }
 }

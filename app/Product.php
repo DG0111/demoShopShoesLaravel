@@ -9,9 +9,11 @@ class Product extends Model
     protected $table = 'products';
     protected $fillable = ['category_id', 'name', 'description', 'price', 'promotion_price', 'quantity', 'status', 'view_count'];
 
+
+
     public function categories()
     {
-        return $this->belongsTo('App\Category', 'category_id', 'id');
+        return $this->hasOne('App\Category', 'id', 'category_id');
     }
 
     public function image()
@@ -27,6 +29,17 @@ class Product extends Model
     public function sizes()
     {
         return $this->hasMany('App\size', 'product_id', 'id');
+    }
+
+    protected static function destroyImageSize()
+        {
+        parent::boot();
+
+        static::deleting(function($product) { // before delete() method call this
+            $product->images()->delete();
+            $product->sizes()->delete();
+            // do the rest of the cleanup...
+        });
     }
 
 

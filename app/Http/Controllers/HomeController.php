@@ -31,6 +31,6 @@ class HomeController extends Controller
             ->limit(8)
             ->get();
         $categories = Category::all();
-        return view('client.index',['productsTest' => $productsTest,'categories' => $categories]);
+        return view('client_.index',['productsTest' => $productsTest,'categories' => $categories]);
     }
 }

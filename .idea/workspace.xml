@@ -3,12 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="72cf5e7d-af0a-47ed-974b-5c404aa2cfe0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreateProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DetailProductController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreateProduct.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Size.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Size.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_/products/add-product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_/products/add-product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/listFunction.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/listFunction.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_/layouts/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_/layouts/_sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin_/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client_/layouts/layout_master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/layouts/layout_master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +157,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin_/products" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/authCustom" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -157,11 +165,11 @@
       <recent name="C:\xampp\htdocs\assgnmentPhp3\resources\views\auth" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\assgnmentPhp3\resources\views\authCustom" />
+      <recent name="C:\xampp\htdocs\assgnmentPhp3\resources\views\admin_" />
       <recent name="C:\xampp\htdocs\assgnmentPhp3\resources\views\admin_\products" />
       <recent name="C:\xampp\htdocs\assgnmentPhp3\resources\views\auth" />
       <recent name="C:\xampp\htdocs\assgnmentPhp3\app\Http\Controllers" />
-      <recent name="C:\xampp\htdocs\assgnmentPhp3\database\seeds" />
-      <recent name="C:\xampp\htdocs\assgnmentPhp3\resources\views\client" />
     </key>
   </component>
   <component name="RunManager">
@@ -219,7 +227,11 @@
       <workItem from="1591062535094" duration="4959000" />
       <workItem from="1591104498444" duration="7292000" />
       <workItem from="1591143719013" duration="5850000" />
-      <workItem from="1591171127434" duration="4399000" />
+      <workItem from="1591171127434" duration="5171000" />
+      <workItem from="1591279360871" duration="2741000" />
+      <workItem from="1591364796078" duration="8002000" />
+      <workItem from="1591536932956" duration="8571000" />
+      <workItem from="1591575846130" duration="1210000" />
     </task>
     <task id="LOCAL-00001" summary="Xong Edit Product">
       <created>1591176918398</created>
@@ -228,7 +240,21 @@
       <option name="project" value="LOCAL" />
       <updated>1591176918398</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Hướng dẫn sử dụng">
+      <created>1591176959268</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591176959268</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Hoàn thành quản lý product">
+      <created>1591177061857</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591177061857</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +272,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Xong Edit Product" />
-    <option name="LAST_COMMIT_MESSAGE" value="Xong Edit Product" />
+    <MESSAGE value="Hướng dẫn sử dụng" />
+    <MESSAGE value="Hoàn thành quản lý product" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hoàn thành quản lý product" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2003" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1590669054931">
@@ -254,10 +282,10 @@
     </state>
     <state x="2003" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1590669054931" />
     <state x="640" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590562303633" />
-    <state x="1684" y="0" key="CommitChangelistDialog2" timestamp="1591176958029">
+    <state x="1684" y="0" key="CommitChangelistDialog2" timestamp="1591177060852">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
-    <state x="1684" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591176958029" />
+    <state x="1684" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591177060852" />
     <state width="1317" height="179" key="GridCell.Tab.0.bottom" timestamp="1590637860312">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
@@ -292,16 +320,16 @@
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1590763342951" />
     <state width="509" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1590711587223" />
-    <state x="1755" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1591171175989">
-      <screen x="1366" y="0" width="1360" height="728" />
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1591575885053">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1590996390801" />
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1591536952683" />
     <state x="1755" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591171175989" />
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1591143727572" />
-    <state x="1857" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591176986083">
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1591575885053" />
+    <state x="1857" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591177064408">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
-    <state x="1857" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591176986083" />
+    <state x="1857" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591177064408" />
     <state x="109" y="62" width="939" height="686" key="dock-window-1" timestamp="1590647447220">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -310,10 +338,10 @@
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
     <state x="1702" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591020777912" />
-    <state x="553" y="38" width="672" height="678" key="search.everywhere.popup" timestamp="1590980682245">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="1710" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591545394323">
+      <screen x="1366" y="0" width="1360" height="728" />
     </state>
-    <state x="1710" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1590888170434" />
+    <state x="1710" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591545394323" />
     <state x="553" y="38" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1590980682245" />
   </component>
   <component name="XDebuggerManager">
@@ -367,6 +395,11 @@
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Size.php</url>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/admin_/categories/index.blade.php</url>
+          <line>19</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -96,6 +96,12 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
     <script>
+
+        @if (Session::get('data'))
+        Swal.fire('{{Session::get('data')}}');
+        @endif
+
+
         function deleteProduct() {
             event.preventDefault();
             var form = event.target.form;

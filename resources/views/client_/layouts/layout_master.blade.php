@@ -23,7 +23,7 @@
 </head>
 <body>
 <div class="wrapper">
-    @include('client__.layouts.header')
+    @include('client_.layouts.header')
     <div class="main-content home-2">
         @yield('content')
     </div>
@@ -233,7 +233,7 @@
         </div>
     </div>
 </div><!-- /.wrapper -->
-@include('client__.layouts.footer')
+@include('client_.layouts.footer')
 <div id="shopping-cart-summary" class="navmenu-shopping-cart navmenu navmenu-default navmenu-fixed-right offcanvas">
     <header>
         <h3 class="section-title">Items <span class="item-count">4</span></h3>

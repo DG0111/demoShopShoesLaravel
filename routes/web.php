@@ -17,25 +17,31 @@ use Illuminate\Support\Facades\Route;
 // admin
 //->middleware('auth.admin')
 
-Route::namespace('Admin')->middleware('auth')->middleware('checkUserIsAdmin')->prefix('admin')->group(function () {
-    Route::get('','DashboardController@showDashboard');
-    Route::resource('product','ProductController');
-    Route::resource('order','OrderController');
-    Route::resource('comment','CommentController');
-    Route::resource('user','UserController');
-    Route::resource('category','CategoryController');
+Route::namespace('Admin')->prefix('admin')->group(function () {
+    Route::get('', 'DashboardController@showDashboard');
+    Route::resource('product', 'ProductController');
+    Route::resource('order', 'OrderController');
+    Route::resource('comment', 'CommentController');
+    Route::resource('user', 'UserController');
+    Route::resource('category', 'CategoryController');
 });
 
 ////login
 //Route::get('login','Auth\LoginController@login');
 //Route::post('login','Auth\LoginController@postLogin');
 //Test
-Route::get('/test-slug','TestController@testSlug')->name('slug');
-Route::get('/images','ImageController@index');
+Route::get('/test-slug', 'TestController@testSlug')->name('slug');
+Route::get('/images', 'ImageController@index');
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('', 'HomeController@index')->name('home');
 
 // detail product
-Route::get('product/{slug}','DetailProductController@show')->name('detailProduct');
+Route::get('product/{slug}', 'DetailProductController@show')->name('detailProduct');
+
+
+// auth login logout Son
+Route::get('/login', 'AuthCustom\AuthController@Login')->name('Auth.Login');
+Route::post('/checkLogin', 'AuthCustom\AuthController@checkLogin');
+Route::get('/logout', 'AuthCustom\AuthController@Logout')->name('Auth.Logout');

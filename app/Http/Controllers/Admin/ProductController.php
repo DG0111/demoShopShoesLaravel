@@ -59,6 +59,7 @@ class ProductController extends Controller
         $product->status = 1;
         $product->slug = Product::slugify($request->name);
         $product->save();
+        //----------------
         $productNew = Product::select('id')->where('name', '=', $request->name)->get(); //sản phẩm vừa thêm
         $idProduct = $productNew[0]->id;
 
@@ -165,7 +166,7 @@ class ProductController extends Controller
             $size->save();
         }
 
-        return redirect('admin/product')->with( ['data' => 'Sửa Sản Phẩm Thành Công ^)^'] );
+        return redirect('admin/product')->with( ['data' => 'Sửa Sản Phẩm Thành Công ^_^'] );
     }
 
     /**

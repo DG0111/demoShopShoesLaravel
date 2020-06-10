@@ -17,7 +17,7 @@ class User extends Authenticatable
      */
 
     protected $fillable = [
-        'full_name', 'address', 'state', 'country', 'email', 'password', 'role'
+        'full_name', 'address', 'state', 'country', 'email', 'password', 'role', 'role_id'
     ];
 
     /**
@@ -37,4 +37,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /**
+     * Hàm lấy danh sách tất cả các vai trò (giống như nhóm tài khoản)
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class, 'role_id', 'id');
+    }
+
+    // hàm kiểm tra user hiện tại có được gán 1 quyền nào đó hay không,
+    // nếu có thì trả về true
+    public function hasPermission(Permission $permission)
+    {
+        echo $permission->name;
+        $check = !!optional(optional($this->role())->permission)->contains($permission->name);
+        dd($check, $this->role(), $permission->name);
+        return $check;
+    }
+
 }

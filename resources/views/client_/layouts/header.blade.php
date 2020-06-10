@@ -4,7 +4,7 @@
             <div class="container">
                 <!-- ============================================================= LOGO MOBILE ============================================================= -->
 
-                <a class="navbar-brand" href="home.html"><img src="assets/images/logo2.png" class="logo" alt=""></a>
+                <a class="navbar-brand" href="home.html"><img src="{{asset('client_/assets/images/logo2.png')}}" class="logo" alt=""></a>
 
                 <!-- ============================================================= LOGO MOBILE : END ============================================================= -->
 
@@ -19,7 +19,7 @@
         <div class="yamm">
             <div class="navbar-collapse collapse animate-dropdown">
                 <div class="container">
-                    <a href="#" class="navbar-brand"><img src="{{asset('client/assets/images/logo2.png')}}" class="logo"
+                    <a href="{{route('home')}}" class="navbar-brand"><img src="{{asset('client_/assets/images/logo2.png')}}" class="logo"
                                                           alt=""></a>
                     <ul class="nav navbar-nav">
                         <li class="yamm-fw">
@@ -28,8 +28,9 @@
                         </li>
                         @foreach($categories as $cate)
                             <li class="yamm-fw">
-                                <a href="#" class="dropdown-toggle"
-                                   data-toggle="dropdown"><span>{{$cate->name}}</span></a>
+                                <a href="{{route('product_cate',$cate->slug)}}" class="dropdown-toggle">
+                                    <span>{{$cate->name}}</span>
+                                </a>
                             </li>
                         @endforeach
                     </ul>
@@ -50,10 +51,10 @@
 
                         @if(Auth::check())
                             <li>
-                                <a title="{{Auth::user()->full_name}}" href="#"><i class="icon icon-user"></i></a>
+                                <a title="" href="#"><i class="icon icon-user"></i></a>
                             </li>
                         @else
-                            <li><a href="{{route('login')}}"><i class="icon icon-user"></i></a></li>
+                            <li><a href=""><i class="icon icon-user"></i></a></li>
                         @endif
 
                         <li><a id="menu-toggle" class="navbar-toggle shopping-cart-toggle" data-toggle="offcanvas"

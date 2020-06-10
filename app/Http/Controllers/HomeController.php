@@ -36,23 +36,29 @@ class HomeController extends Controller
         return view('client_.index', compact('categories', 'productsNew', 'productsPromotion'));
     }
 
-    public function detailProduct($slug) {
-        $pro = Product::where('slug','=',$slug)->first();
+    public function detailProduct($slug)
+    {
+        $pro = Product::where('slug', '=', $slug)->first();
 
         $categories = Category::all();
 
-        $productRelated = Product::where('category_id',$pro->category_id)
-            ->where('id','!=',$pro->id)
+        $productRelated = Product::where('category_id', $pro->category_id)
+            ->where('id', '!=', $pro->id)
             ->limit(8)
             ->get();
         $proSuggest = Product::all()->random(8);
-            return view('client_.product-simple', compact('categories','pro', 'productRelated','proSuggest'));
+        return view('client_.product-simple', compact('categories', 'pro', 'productRelated', 'proSuggest'));
 
     }
 
-    public function productCate($slug) {
-        $cate = Category::where('slug',$slug)->get();
-        return view('client/catalog',compact('cate'));
+    public function productCate($slug)
+    {
+        $cate = Category::where('slug', $slug)->first();
+        $categories = Category::all();
+        $product = Product::where('category_id', $cate->id)->paginate(12);
+
+
+        return view('client_.catalog', compact('categories', 'cate', 'product'));
     }
 
 }

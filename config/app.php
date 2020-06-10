@@ -136,6 +136,7 @@ return [
 
     'providers' => [
         Collective\Html\HtmlServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
         /*
          * Laravel Framework Service Providers...
          */

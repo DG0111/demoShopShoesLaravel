@@ -4,7 +4,8 @@
             <div class="container">
                 <!-- ============================================================= LOGO MOBILE ============================================================= -->
 
-                <a class="navbar-brand" href="home.html"><img src="{{asset('client_/assets/images/logo2.png')}}" class="logo" alt=""></a>
+                <a class="navbar-brand" href="home.html"><img src="{{asset('client_/assets/images/logo2.png')}}"
+                                                              class="logo" alt=""></a>
 
                 <!-- ============================================================= LOGO MOBILE : END ============================================================= -->
 
@@ -19,8 +20,9 @@
         <div class="yamm">
             <div class="navbar-collapse collapse animate-dropdown">
                 <div class="container">
-                    <a href="{{route('home')}}" class="navbar-brand"><img src="{{asset('client_/assets/images/logo2.png')}}" class="logo"
-                                                          alt=""></a>
+                    <a href="{{route('home')}}" class="navbar-brand"><img
+                            src="{{asset('client_/assets/images/logo2.png')}}" class="logo"
+                            alt=""></a>
                     <ul class="nav navbar-nav">
                         <li class="yamm-fw">
                             <a href="{{url('/')}}" class="dropdown-toggle"
@@ -54,12 +56,20 @@
                                 <a title="" href="#"><i class="icon icon-user"></i></a>
                             </li>
                         @else
-                            <li><a href=""><i class="icon icon-user"></i></a></li>
+                            <li>
+                                <a href="{{route('Auth.Login')}}">
+                                    <i class="icon icon-user"></i>
+                                </a>
+                            </li>
                         @endif
 
-                        <li><a id="menu-toggle" class="navbar-toggle shopping-cart-toggle" data-toggle="offcanvas"
-                               data-target="#shopping-cart-summary" href="#"><i class="icon icon-shopbag"></i><span
-                                    class="item-count">5</span></a></li>
+                        <li>
+                            <a id="menu-toggle"
+                               class="navbar-toggle shopping-cart-toggle"
+                               data-toggle="offcanvas"
+                               data-target="#shopping-cart-summary" href="#">
+                                <i class="icon icon-shopbag"></i>
+                                <span class="item-count">5</span></a></li>
                     </ul>
                 </div>
             </div><!-- /.navbar-collapse -->

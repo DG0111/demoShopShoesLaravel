@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72cf5e7d-af0a-47ed-974b-5c404aa2cfe0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/assgnmentPhp3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assgnmentPhp3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_29_005439_creat_long_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client_/catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/catalog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client_/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client_/catalog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/catalog.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/client_/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client_/product-simple.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/product-simple.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +142,7 @@
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-diactoros" />
       <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
       <path value="$PROJECT_DIR$/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
     </include_path>
   </component>
   <component name="ProjectId" id="1c9KkXubsx0GSvRIUud4DRJxoLx" />
@@ -233,7 +232,8 @@
       <workItem from="1591536932956" duration="8571000" />
       <workItem from="1591575846130" duration="22501000" />
       <workItem from="1591688023580" duration="8322000" />
-      <workItem from="1591779094032" duration="6324000" />
+      <workItem from="1591779094032" duration="6393000" />
+      <workItem from="1591798663991" duration="5984000" />
     </task>
     <task id="LOCAL-00001" summary="Xong Edit Product">
       <created>1591176918398</created>
@@ -263,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591577942161</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Đổ sản phẩm ra client">
+      <created>1591796847007</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1591796847007</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,7 +291,8 @@
     <MESSAGE value="Hướng dẫn sử dụng" />
     <MESSAGE value="Hoàn thành quản lý product" />
     <MESSAGE value="Đang làm login đăng nhập phân quyền" />
-    <option name="LAST_COMMIT_MESSAGE" value="Đang làm login đăng nhập phân quyền" />
+    <MESSAGE value="Đổ sản phẩm ra client" />
+    <option name="LAST_COMMIT_MESSAGE" value="Đổ sản phẩm ra client" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2003" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1590669054931">
@@ -292,10 +300,10 @@
     </state>
     <state x="2003" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1590669054931" />
     <state x="640" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590562303633" />
-    <state x="483" y="0" key="CommitChangelistDialog2" timestamp="1591577940473">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="1684" y="0" key="CommitChangelistDialog2" timestamp="1591796845298">
+      <screen x="1366" y="0" width="1360" height="728" />
     </state>
-    <state x="1684" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591177060852" />
+    <state x="1684" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591796845298" />
     <state x="483" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591577940473" />
     <state width="1317" height="179" key="GridCell.Tab.0.bottom" timestamp="1590637860312">
       <screen x="1366" y="0" width="1360" height="728" />
@@ -331,11 +339,11 @@
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1590763342951" />
     <state width="509" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1590711587223" />
-    <state x="1755" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1591779208595">
+    <state x="1755" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1591799187516">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
     <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1591536952683" />
-    <state x="1755" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591779208595" />
+    <state x="1755" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591799187516" />
     <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1591575885053" />
     <state x="1852" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591690417870">
       <screen x="1366" y="0" width="1360" height="728" />
@@ -353,10 +361,10 @@
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
     <state x="1702" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591020777912" />
-    <state x="1710" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591704405809">
+    <state x="1710" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591803478716">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
-    <state x="1710" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591704405809" />
+    <state x="1710" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591803478716" />
     <state x="553" y="38" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1591587792200" />
   </component>
   <component name="XDebuggerManager">
@@ -431,14 +439,10 @@
           <line>190</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="php-line-method">
-          <url>file://$PROJECT_DIR$/app/Role.php</url>
-          <line>11</line>
-          <properties>
-            <option name="className" value="\App\Role" />
-            <option name="methodName" value="permission" />
-          </properties>
-          <option name="timeStamp" value="23" />
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/client_/catalog.blade.php</url>
+          <line>69</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

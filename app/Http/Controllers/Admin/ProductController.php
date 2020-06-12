@@ -10,7 +10,12 @@ use App\Http\Requests\CreateProduct;
 use App\Image;
 use App\Product;
 use App\Size;
+use App\User;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class ProductController extends Controller
 {
@@ -21,6 +26,18 @@ class ProductController extends Controller
      */
     public function index()
     {
+//        Role::create(['name' => 'Admin']);
+//        Permission::create(['name' => 'Product.index']);
+//        Auth::user()->givePermissionTo('Product.index');
+//        Auth::user()->assignRole('Admin');
+
+//       ` $role = Role::where('name','Admin')->first();
+//        $role->givePermissionTo('Product.index');`
+
+//        return User::role('Admin')->get();
+//        echo 'Hello world';
+
+//
         $pro = Product::select()
             ->orderBy('products.created_at', 'desc')
             ->paginate(10);
@@ -36,7 +53,6 @@ class ProductController extends Controller
     public function create()
     {
         $cate = Category::all();
-
         return view('admin_.products.add-product', compact('cate'));
     }
 
@@ -84,7 +100,7 @@ class ProductController extends Controller
         }
 
 
-        return redirect('admin/product')->with( ['data' => 'Thêm Sản Phẩm Thành Công ^)^'] );
+        return redirect('admin/product')->with(['data' => 'Thêm Sản Phẩm Thành Công ^)^']);
 
     }
 
@@ -110,8 +126,8 @@ class ProductController extends Controller
         $cate = Category::all();
         $pro = Product::find($id);
 
-        if($pro == null) {
-            return redirect('admin/product')->with( ['data' => 'Sai thông tin sản phẩm cần sửa'] );
+        if ($pro == null) {
+            return redirect('admin/product')->with(['data' => 'Sai thông tin sản phẩm cần sửa']);
         }
 
         foreach ($pro->sizes as $sizes) {
@@ -132,8 +148,8 @@ class ProductController extends Controller
         // product
         $product = Product::find($id);
 
-        if($product == null) {
-            return redirect('admin/product')->with( ['data' => 'Sửa Sản Phẩm Thất Bại ^)^'] );
+        if ($product == null) {
+            return redirect('admin/product')->with(['data' => 'Sửa Sản Phẩm Thất Bại ^)^']);
         }
 
         $product->name = $request->name;
@@ -166,7 +182,7 @@ class ProductController extends Controller
             $size->save();
         }
 
-        return redirect('admin/product')->with( ['data' => 'Sửa Sản Phẩm Thành Công ^_^'] );
+        return redirect('admin/product')->with(['data' => 'Sửa Sản Phẩm Thành Công ^_^']);
     }
 
     /**
@@ -180,13 +196,13 @@ class ProductController extends Controller
 
         $pro = Product::find($id);
 
-        if($pro == null) {
-            return redirect()->back()->with( ['data' => 'Xóa Sản Phẩm thất bại !!!'] );
+        if ($pro == null) {
+            return redirect()->back()->with(['data' => 'Xóa Sản Phẩm thất bại !!!']);
         }
 
         $pro::destroyImageSize();
         $pro->delete();
-        return redirect('admin/product')->with( ['data' => 'Xóa Sản Phẩm Thành Công ^)^'] );
+        return redirect('admin/product')->with(['data' => 'Xóa Sản Phẩm Thành Công ^)^']);
 
     }
 }

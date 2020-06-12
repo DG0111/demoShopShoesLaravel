@@ -11,20 +11,20 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $password = Hash::make('123456');
+        $password = Hash::make('longcham5');
         \Illuminate\Support\Facades\DB::table('users')->insert([
-            [
-                'full_name' => 'Pham Van Khai',
-                'address' => 'Tốt Động - Chương Mỹ - Hà Nội',
-                'state' => 1,
-                'email' => 'khai123@gmail.com',
-                'password' => $password,
-            ],
             [
                 'full_name' => 'Ngo Van Long',
                 'address' => 'Tốt Động - Chương Mỹ - Hà Nội',
                 'state' => 1,
                 'email' => 'admin@gmail.com',
+                'password' => $password,
+            ],
+            [
+                'full_name' => 'Pham Van Khai',
+                'address' => 'Tốt Động - Chương Mỹ - Hà Nội',
+                'state' => 1,
+                'email' => 'khai123@gmail.com',
                 'password' => $password,
             ],
             [

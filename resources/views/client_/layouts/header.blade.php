@@ -53,11 +53,11 @@
 
                         @if(Auth::check())
                             <li>
-                                <a title="" href="#"><i class="icon icon-user"></i></a>
+                                <a title="{{Auth::user()->full_name}}" href="#"><i class="icon icon-user"></i></a>
                             </li>
                         @else
                             <li>
-                                <a href="{{route('Auth.Login')}}">
+                                <a href="{{route('login')}}">
                                     <i class="icon icon-user"></i>
                                 </a>
                             </li>

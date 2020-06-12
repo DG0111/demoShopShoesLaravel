@@ -32,9 +32,9 @@
                                 <div class="input-group">
                                     <input type="text" name="email" class="form-control" placeholder="Username">
                                     <div class="input-group-append">
-                        <span class="input-group-text">
-                          <i class="mdi mdi-check-circle-outline"></i>
-                        </span>
+                                        <span class="input-group-text">
+                                          <i class="mdi mdi-check-circle-outline"></i>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                             </div>
                             <div class="text-block text-center my-3">
                                 <span class="text-small font-weight-semibold">Not a member ?</span>
-                                <a href="register.html" class="text-black text-small">Create new account</a>
+                                <a href="{{route('register')}}" class="text-black text-small">Create new account</a>
                             </div>
                         </form>
                     </div>

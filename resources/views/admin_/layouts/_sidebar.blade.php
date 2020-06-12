@@ -60,11 +60,47 @@
                 </ul>
             </div>
         </li>
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link" href="{{url('admin/comment')}}">--}}
-{{--                <i class="menu-icon mdi mdi-trackpad"></i>--}}
-{{--                <span class="menu-title">Comment</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#user-dropdown" aria-expanded="false"
+               aria-controls="user-dropdown">
+                <i class="menu-icon mdi mdi-trackpad"></i>
+                <span class="menu-title">User</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="user-dropdown">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('admin/user')}}">Show user</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('admin/user/create')}}">Add user</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#admin-dropdown" aria-expanded="false"
+               aria-controls="admin-dropdown">
+                <i class="menu-icon mdi mdi-trackpad"></i>
+                <span class="menu-title">Admin</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="admin-dropdown">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('admin/admin')}}">Show user</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('admin/admin/create')}}">Add user</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        {{--        <li class="nav-item">--}}
+        {{--            <a class="nav-link" href="{{url('admin/comment')}}">--}}
+        {{--                <i class="menu-icon mdi mdi-trackpad"></i>--}}
+        {{--                <span class="menu-title">Comment</span>--}}
+        {{--            </a>--}}
+        {{--        </li>--}}
     </ul>
 </nav>

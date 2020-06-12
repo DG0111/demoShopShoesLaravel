@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -14,7 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+
+        $user = User::role('User')->paginate(10);
+        return view('admin_.users.index',compact('user'));
     }
 
     /**
@@ -24,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+//        return view('admin_.users.add-user');
     }
 
     /**
@@ -46,7 +50,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+//
     }
 
     /**
@@ -80,6 +84,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return redirect()->back()->with(['data' => 'Xóa thành viên thành Công ^)^']);
     }
 }

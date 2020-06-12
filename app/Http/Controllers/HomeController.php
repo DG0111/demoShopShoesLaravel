@@ -56,8 +56,6 @@ class HomeController extends Controller
         $cate = Category::where('slug', $slug)->first();
         $categories = Category::all();
         $product = Product::where('category_id', $cate->id)->paginate(12);
-
-
         return view('client_.catalog', compact('categories', 'cate', 'product'));
     }
 

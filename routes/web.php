@@ -17,18 +17,19 @@ use Illuminate\Support\Facades\Route;
 // admin
 //->middleware('auth.admin')
 
-Route::namespace('Admin')->middleware(['auth'])->middleware('role:Admin')->prefix('admin')->group(function () {
+Route::namespace('Admin')->middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('', 'DashboardController@showDashboard');
     Route::resource('product', 'ProductController');
     Route::resource('order', 'OrderController');
     Route::resource('comment', 'CommentController');
     Route::resource('user', 'UserController');
     Route::resource('category', 'CategoryController');
-    Route::resource('admin', 'AdminController')->middleware('permission:User.Index');
+    Route::resource('admin', 'AdminController');
 });
 
 Route::get('/test-slug', 'TestController@testSlug')->name('slug');
 Route::get('/images', 'ImageController@index');
+
 Auth::routes();
 
 Route::get('', 'HomeController@index')->name('home');

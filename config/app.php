@@ -135,6 +135,7 @@ return [
     */
 
     'providers' => [
+//        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         /*
@@ -190,6 +191,7 @@ return [
     */
 
     'aliases' => [
+//        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
 

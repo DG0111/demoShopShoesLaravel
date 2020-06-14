@@ -38,6 +38,14 @@ Route::get('', 'HomeController@index')->name('home');
 Route::get('chi-tiet-san-pham/{slug}', 'HomeController@detailProduct')->name('detailProduct');
 Route::get('san-pham/{slug}', 'HomeController@productCate')->name('product_cate');
 
+// cart
+
+Route::post('cart/{id}', 'CartController@addToCart')->name('add-cart');
+Route::get('check-out','CartController@showCart')->name('check-out');
+Route::delete('delete-product-in-cart/{id}','CartController@remove')->name('delete-product-in-cart');
+Route::patch('update-cart', 'CartController@update');
+
+Route::post('create-order','OrderController@create')->name('create-order');
 
 
 

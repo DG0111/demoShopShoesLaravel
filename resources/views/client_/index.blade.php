@@ -5,124 +5,74 @@
 
     <!-- ============================================================= SECTION – HERO ============================================================= -->
 
-    {{--    <section id="hero" class="home-2-slider wow fadeIn">--}}
-    {{--        <div id="owl-main" class="owl-carousel">--}}
+        <section id="hero" class="home-2-slider wow fadeIn">
+            <div id="owl-main" class="owl-carousel">
 
-    {{--            <div class="item" style="background-image: url(assets/images/hero/home-2.jpg);">--}}
-    {{--                <div class="container">--}}
-    {{--                    <div class="caption vertical-center text-left">--}}
+                <div class="item" style="background-image: url(assets/images/hero/home-2.jpg);">
+                    <div class="container">
+                        <div class="caption vertical-center text-left">
 
-    {{--                        <h1 class="fadeInDown-1 title"><span class="first-letter">J</span>anuary Looks</h1>--}}
-    {{--                        <p class="fadeInDown-2 tagline">New Collection</p>--}}
-    {{--                        <div class="fadeInDown-3">--}}
-    {{--                            <a href="lookbook-2.html" class="btn btn-default btn-block view-look-button">View--}}
-    {{--                                LookBook</a>--}}
-    {{--                        </div><!-- /.fadeIn -->--}}
+                            <h1 class="fadeInDown-1 title"><span class="first-letter">J</span>anuary Looks</h1>
+                            <p class="fadeInDown-2 tagline">New Collection</p>
+                            <div class="fadeInDown-3">
+                                <a href="lookbook-2.html" class="btn btn-default btn-block view-look-button">View
+                                    LookBook</a>
+                            </div><!-- /.fadeIn -->
 
-    {{--                    </div><!-- /.caption -->--}}
-    {{--                </div><!-- /.container -->--}}
-    {{--            </div><!-- /.item -->--}}
+                        </div><!-- /.caption -->
+                    </div><!-- /.container -->
+                </div><!-- /.item -->
 
-    {{--            <div class="item" style="background-image: url(assets/images/hero/home-1.jpg);">--}}
-    {{--                <div class="container">--}}
-    {{--                    <div class="caption vertical-center text-left">--}}
+                <div class="item" style="background-image: url(assets/images/hero/home-1.jpg);">
+                    <div class="container">
+                        <div class="caption vertical-center text-left">
 
-    {{--                        <h1 class="fadeInDown-1 title"><span class="first-letter">J</span>anuary Looks</h1>--}}
-    {{--                        <p class="fadeInDown-2 tagline">New Collection</p>--}}
-    {{--                        <div class="fadeInDown-3">--}}
-    {{--                            <a href="lookbook-2.html" class="btn btn-default btn-block view-look-button">View--}}
-    {{--                                LookBook</a>--}}
-    {{--                        </div><!-- /.fadeIn -->--}}
+                            <h1 class="fadeInDown-1 title"><span class="first-letter">J</span>anuary Looks</h1>
+                            <p class="fadeInDown-2 tagline">New Collection</p>
+                            <div class="fadeInDown-3">
+                                <a href="lookbook-2.html" class="btn btn-default btn-block view-look-button">View
+                                    LookBook</a>
+                            </div><!-- /.fadeIn -->
 
-    {{--                    </div><!-- /.caption -->--}}
-    {{--                </div><!-- /.container -->--}}
-    {{--            </div><!-- /.item -->--}}
+                        </div><!-- /.caption -->
+                    </div><!-- /.container -->
+                </div><!-- /.item -->
 
-    {{--            <div class="item" style="background-image: url(assets/images/hero/home-2.jpg);">--}}
-    {{--                <div class="container">--}}
-    {{--                    <div class="caption vertical-center text-left">--}}
+                <div class="item" style="background-image: url(assets/images/hero/home-2.jpg);">
+                    <div class="container">
+                        <div class="caption vertical-center text-left">
 
-    {{--                        <h1 class="fadeInDown-1 title"><span class="first-letter">J</span>anuary Looks</h1>--}}
-    {{--                        <p class="fadeInDown-2 tagline">New Collection</p>--}}
-    {{--                        <div class="fadeInDown-3">--}}
-    {{--                            <a href="lookbook-2.html" class="btn btn-default btn-block view-look-button">View--}}
-    {{--                                LookBook</a>--}}
-    {{--                        </div><!-- /.fadeIn -->--}}
+                            <h1 class="fadeInDown-1 title"><span class="first-letter">J</span>anuary Looks</h1>
+                            <p class="fadeInDown-2 tagline">New Collection</p>
+                            <div class="fadeInDown-3">
+                                <a href="lookbook-2.html" class="btn btn-default btn-block view-look-button">View
+                                    LookBook</a>
+                            </div><!-- /.fadeIn -->
 
-    {{--                    </div><!-- /.caption -->--}}
-    {{--                </div><!-- /.container -->--}}
-    {{--            </div><!-- /.item -->--}}
+                        </div><!-- /.caption -->
+                    </div><!-- /.container -->
+                </div><!-- /.item -->
 
-    {{--            <div class="item" style="background-image: url(assets/images/hero/home-1.jpg);">--}}
-    {{--                <div class="container">--}}
-    {{--                    <div class="caption vertical-center text-left">--}}
+                <div class="item" style="background-image: url(assets/images/hero/home-1.jpg);">
+                    <div class="container">
+                        <div class="caption vertical-center text-left">
 
-    {{--                        <h1 class="fadeInDown-1 title"><span class="first-letter">J</span>anuary Looks</h1>--}}
-    {{--                        <p class="fadeInDown-2 tagline">New Collection</p>--}}
-    {{--                        <div class="fadeInDown-3">--}}
-    {{--                            <a href="lookbook-2.html" class="btn btn-default btn-block view-look-button">View--}}
-    {{--                                LookBook</a>--}}
-    {{--                        </div><!-- /.fadeIn -->--}}
+                            <h1 class="fadeInDown-1 title"><span class="first-letter">J</span>anuary Looks</h1>
+                            <p class="fadeInDown-2 tagline">New Collection</p>
+                            <div class="fadeInDown-3">
+                                <a href="lookbook-2.html" class="btn btn-default btn-block view-look-button">View
+                                    LookBook</a>
+                            </div><!-- /.fadeIn -->
 
-    {{--                    </div><!-- /.caption -->--}}
-    {{--                </div><!-- /.container -->--}}
-    {{--            </div><!-- /.item -->--}}
+                        </div><!-- /.caption -->
+                    </div><!-- /.container -->
+                </div><!-- /.item -->
 
-    {{--        </div><!-- /.owl-carousel -->--}}
-    {{--    </section>--}}
+            </div><!-- /.owl-carousel -->
+        </section>
 
     <!-- ============================================================= SECTION – HERO : END ============================================================= -->
     <div class="container">
-        {{--        <section class="home-2-features inner-top-xs">--}}
-        {{--            <div class="row">--}}
-        {{--                <div class="col-md-6 col-sm-12  feature-block">--}}
-        {{--                    <a href="categories-grid.html" class="media features">--}}
-        {{--                        <div class="media-left">--}}
-        {{--                            <div class="image">--}}
-        {{--                                <img width="300" height="300" class="lazy-load media-object img-responsive"--}}
-        {{--                                     src="assets/images/blank.gif" data-echo="assets/images/products/feature1.jpg"--}}
-        {{--                                     alt="">--}}
-        {{--                            </div>--}}
-        {{--                        </div>--}}
-        {{--                        <div class="media-body media-middle">--}}
-        {{--                            <div class="section text-center">--}}
-        {{--                                <h5 class="name">john williams</h5>--}}
-        {{--                                <h3 class="tagline">perfection</h3>--}}
-        {{--                            </div>--}}
-        {{--                        </div>--}}
-        {{--                    </a><!-- /.media -->--}}
-
-        {{--                    <a href="categories-grid.html" class="media features">--}}
-        {{--                        <div class="media-body media-middle">--}}
-        {{--                            <div class="section text-center">--}}
-        {{--                                <h5 class="name">sunglasses</h5>--}}
-        {{--                                <h3 class="tagline">summer 2015</h3>--}}
-        {{--                            </div>--}}
-        {{--                        </div>--}}
-        {{--                        <div class="media-right">--}}
-        {{--                            <div class="image">--}}
-        {{--                                <img width="300" height="300" class="lazy-load media-object img-responsive"--}}
-        {{--                                     src="assets/images/blank.gif" data-echo="assets/images/products/feature2.jpg"--}}
-        {{--                                     alt="">--}}
-        {{--                            </div>--}}
-        {{--                        </div>--}}
-        {{--                    </a><!-- /.media -->--}}
-        {{--                </div><!-- /.feature-block -->--}}
-
-        {{--                <div class="col-md-6 col-sm-12 feature-block big-image hidden-sm">--}}
-        {{--                    <a href="categories-grid.html">--}}
-        {{--                        <img width="570" height="600" class="img-responsive lazy-load" src="assets/images/blank.gif"--}}
-        {{--                             data-echo="assets/images/products/feature3.jpg" alt="">--}}
-        {{--                        <div class="centered-caption">--}}
-        {{--                            <div class="banner-text text-center">--}}
-        {{--                                <h4 class="banner-title">clothing</h4>--}}
-        {{--                                <h2 class="tagline">sharp styles</h2>--}}
-        {{--                            </div>--}}
-        {{--                        </div>--}}
-        {{--                    </a>--}}
-        {{--                </div><!-- /.feature-block -->--}}
-        {{--            </div><!-- /.row -->--}}
-        {{--        </section><!-- /.home-2-features -->--}}
 
         <div class="product-tab-ver2">
             <div role="tabpanel">
@@ -167,9 +117,9 @@
                                             </div><!-- .product-price -->
                                             <div class="buttons-holder m-t-20">
                                                 <div class="add-cart-holder">
-                                                    <a title="Add to cart" href="checkout.html"
+                                                    <a title="Add to cart" href="{{route('detailProduct',$pro->slug)}}"
                                                        class="cart-button btn btn-primary">
-                                                        <span>Thêm Giỏ Hàng</span>
+                                                        <span>Tìm Hiểu Ngay</span>
                                                     </a>
                                                 </div><!-- .add-cart-holder -->
                                             </div><!-- .buttons-holder -->

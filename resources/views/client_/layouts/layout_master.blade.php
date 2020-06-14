@@ -236,120 +236,85 @@
 @include('client_.layouts.footer')
 <div id="shopping-cart-summary" class="navmenu-shopping-cart navmenu navmenu-default navmenu-fixed-right offcanvas">
     <header>
-        <h3 class="section-title">Items <span class="item-count">4</span></h3>
+        <h3 class="section-title">Items
+            <span class="item-count">
+                @if(session('cart'))
+                    @php
+                        $quantity = 0;
+                    @endphp
+                    @foreach(session('cart') as $id => $product)
+                        @php
+                            $quantity += $product['quantity'];
+                        @endphp
+                    @endforeach
+                    {{$quantity}}
+                @else
+                    0
+                @endif
+            </span>
+        </h3>
     </header>
     <div class="cart-products">
         <div class="cart-block-list">
             <ul>
-                <li>
-                    <div class="product">
-                        <div class='row'>
-                            <div class="col-md-4 col-sm-4">
-                                <a href="product-simple.html"><img src="assets/images/blank.gif"
-                                                                   data-echo="assets/images/cart-products/01.jpg"
-                                                                   alt=""></a>
-                            </div>
-                            <div class="col-md-8 col-sm-8">
-                                <div class="cart-info">
-                                    <div class="product-name">
-                                        <span class="quantity-formated"><span class="quantity">1</span>x</span>
-                                        <a href="product-simple.html">conrtast <br> shoulder path</a>
+                @php $total = 0 @endphp
+                @if(session('cart'))
+                    @foreach(session('cart') as $id => $pro)
+                            @php $total += $pro['price'] * $pro['quantity'] @endphp
+                            <li>
+                            <div class="product">
+                                <div class='row'>
+                                    <div class="col-md-4 col-sm-4">
+                                        <a href="product-simple.html">
+                                            <img src="{{asset('files/'.$pro['image'])}}"
+                                                 alt="">
+                                        </a>
                                     </div>
+                                    <div class="col-md-8 col-sm-8">
+                                        <div class="cart-info">
+                                            <div class="product-name">
+                                                <span class="quantity-formated"><span
+                                                        class="quantity">{{ $pro['quantity'] }}</span>x</span>
+                                                <a href="product-simple.html">{{ $pro['name'] }}</a>
+                                            </div>
 
-                                    <div class="product-price">
-                                        <span class='amount'>$140</span>
+                                            <div class="product-price">
+                                                <span class='amount'>${{ $pro['price'] }}</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <form class="delete" action="{{route('delete-product-in-cart', $id)}}"
+                                      method="post">
+                                    <button style="border: none; background: none;" type="submit" class="remove-link"></button>
+{{--                                    <input--}}
+{{--                                        style="font-size: 12px"--}}
+{{--                                        id="delete"--}}
+{{--                                        class="remove-link"--}}
+{{--                                        type="submit"--}}
+{{--                                        onclick="deleteProduct()"--}}
+{{--                                        value="Delete"/>--}}
+                                    @method('delete')
+                                    @csrf
+                                </form>
                             </div>
-                        </div>
-                        <a href="#" class="remove-link"></a>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="product">
-                        <div class='row'>
-                            <div class="col-md-4 col-sm-4">
-                                <a href="product-simple.html"><img src="assets/images/blank.gif"
-                                                                   data-echo="assets/images/cart-products/02.jpg"
-                                                                   alt=""></a>
-                            </div>
-                            <div class="col-md-8 col-sm-8">
-                                <div class="cart-info">
-                                    <div class="product-name">
-                                        <span class="quantity-formated"><span class="quantity">1</span>x</span>
-                                        <a href="product-simple.html">flocked print sweatshirt</a>
-                                    </div>
-
-                                    <div class="product-price">
-                                        <span class='amount'>$99</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="remove-link"></a>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="product">
-                        <div class='row'>
-                            <div class="col-md-4 col-sm-4">
-                                <a href="product-simple.html"><img src="assets/images/blank.gif"
-                                                                   data-echo="assets/images/cart-products/03.jpg"
-                                                                   alt=""></a>
-                            </div>
-                            <div class="col-md-8 col-sm-8">
-                                <div class="cart-info">
-                                    <div class="product-name">
-                                        <span class="quantity-formated"><span class="quantity">1</span>x</span>
-                                        <a href="product-simple.html">curves T-shirt</a>
-                                    </div>
-
-                                    <div class="product-price">
-                                        <span class='amount'>$115</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="remove-link"></a>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="product">
-                        <div class='row'>
-                            <div class="col-md-4 col-sm-4">
-                                <a href="product-simple.html"><img src="assets/images/blank.gif"
-                                                                   data-echo="assets/images/cart-products/04.jpg"
-                                                                   alt=""></a>
-                            </div>
-                            <div class="col-md-8 col-sm-8">
-                                <div class="cart-info">
-                                    <div class="product-name">
-                                        <span class="quantity-formated"><span class="quantity">1</span>x</span>
-                                        <a href="product-simple.html">simple backpack printed</a>
-                                    </div>
-
-                                    <div class="product-price">
-                                        <span class='amount'>$68</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="remove-link"></a>
-                    </div>
-                </li>
+                        </li>
+                    @endforeach
+                @else
+                    <i>Chưa có sản phẩm nào</i>
+                @endif
             </ul>
 
             <div class="cart-summary text-center inner-top-50">
                 <h5 class="cart-total">Your Total</h5>
-                <p class="cart-total-price">$492.00</p>
+                <p class="cart-total-price">${{$total}}</p>
                 <p class="instruction">shipping costs are calculated at the next step,before you pay.</p>
-                <a class="btn btn-primary btn-uppercase continue-shopping" href="checkout.html">continue to checkout</a>
+                <a class="btn btn-primary btn-uppercase continue-shopping" href="{{route('check-out')}}">continue to
+                    checkout</a>
             </div>
         </div>
-    </div> // cart
+    </div>
+
 </div>
 
 <div class="overlay"></div>

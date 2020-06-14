@@ -9,6 +9,7 @@
                 </ul><!--breadcrumb-->
             </div><!--container-->
         </div><!--breadcrumb-holder-->
+
         <div id="single-product" class="inner-top-50">
             <div class="container">
                 <div class="row single-product-row wow fadeIn">
@@ -33,17 +34,6 @@
                                             @endforeach
                                         </ul>
                                     </div>
-                                    {{--                                    <div class="col-md-2 col-xs-2">--}}
-                                    {{--                                        <ul id="product-thumbnails" class="vertical">--}}
-                                    {{--                                            @foreach($pro->images as $value)--}}
-                                    {{--                                                <li>--}}
-                                    {{--                                                    <img src="{{asset('files/'.$value->url)}}"--}}
-                                    {{--                                                         class="lazy-load"--}}
-                                    {{--                                                         alt=""/>--}}
-                                    {{--                                                </li>--}}
-                                    {{--                                            @endforeach--}}
-                                    {{--                                        </ul>--}}
-                                    {{--                                    </div>--}}
                                 </div>
                             </section>
                         </div>
@@ -62,7 +52,8 @@
                                 </ul>
                             </div>
                             <br>
-                            <form class="cart">
+                            <form class="cart" method="post" action="{{route('add-cart',$pro->id)}}">
+                                @csrf
                                 <div class="product-attributes">
                                     <div class="size-holder m-t-20 clearfix">
                                         <div class="quantity-holder">
@@ -87,7 +78,6 @@
                                     </button>
                                 </div>
                             </form>
-
                             <div id="product-simple-tab">
                                 <div class="tabs">
                                     <ul class="nav nav-tabs nav-tab-cells">

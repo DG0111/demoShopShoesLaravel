@@ -4,7 +4,7 @@
             <div class="container">
                 <!-- ============================================================= LOGO MOBILE ============================================================= -->
 
-                <a class="navbar-brand" href="home.html"><img src="{{asset('client_/assets/images/logo2.png')}}"
+                <a class="navbar-brand" href="{{url('')}}"><img src="{{asset('client_/assets/images/logo2.png')}}"
                                                               class="logo" alt=""></a>
 
                 <!-- ============================================================= LOGO MOBILE : END ============================================================= -->
@@ -25,7 +25,7 @@
                             alt=""></a>
                     <ul class="nav navbar-nav">
                         <li class="yamm-fw">
-                            <a href="{{url('/')}}" class="dropdown-toggle"
+                            <a href="{{url('')}}" class="dropdown-toggle"
                                data-toggle="dropdown"><span>Trang Chủ</span></a>
                         </li>
                         @foreach($categories as $cate)
@@ -37,10 +37,15 @@
                         @endforeach
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown searchbox bewear-dropdown"><a href="#" data-hover="dropdown"
-                                                                          class="no-drop-icon dropdown-toggle"
-                                                                          data-toggle="dropdown"><i
-                                    class="icon icon-search"></i></a>
+                        <li class="dropdown searchbox bewear-dropdown">
+                            <a href="#" data-hover="dropdown"
+                               class="no-drop-icon dropdown-toggle"
+                               data-toggle="dropdown">
+                                <i
+                                    class="icon icon-search">
+
+                                </i>
+                            </a>
                             <div class="dropdown-menu bewear-dropdown-menu">
                                 <form id="search" class="navbar-form search" role="search">
                                     <input type="search" class="form-control" placeholder="Type to search">
@@ -67,9 +72,23 @@
                             <a id="menu-toggle"
                                class="navbar-toggle shopping-cart-toggle"
                                data-toggle="offcanvas"
-                               data-target="#shopping-cart-summary" href="#">
+                               data-target="#shopping-cart-summary" href="{{route('check-out')}}">
                                 <i class="icon icon-shopbag"></i>
-                                <span class="item-count">5</span></a></li>
+                                <span class="item-count">
+                                    @if(session('cart'))
+                                        @php
+                                            $quantity = 0;
+                                        @endphp
+                                        @foreach(session('cart') as $id => $product)
+                                            @php
+                                                $quantity += $product['quantity'];
+                                            @endphp
+                                        @endforeach
+                                        {{$quantity}}
+                                    @else
+                                        0
+                                    @endif
+                                </span></a></li>
                     </ul>
                 </div>
             </div><!-- /.navbar-collapse -->

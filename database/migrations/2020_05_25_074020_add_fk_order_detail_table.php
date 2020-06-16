@@ -15,6 +15,7 @@ class AddFkOrderDetailTable extends Migration
     {
         Schema::table('orderDetail', function (Blueprint $table) {
             $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 

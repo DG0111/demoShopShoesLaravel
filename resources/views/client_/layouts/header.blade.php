@@ -5,7 +5,7 @@
                 <!-- ============================================================= LOGO MOBILE ============================================================= -->
 
                 <a class="navbar-brand" href="{{url('')}}"><img src="{{asset('client_/assets/images/logo2.png')}}"
-                                                              class="logo" alt=""></a>
+                                                                class="logo" alt=""></a>
 
                 <!-- ============================================================= LOGO MOBILE : END ============================================================= -->
 
@@ -55,13 +55,40 @@
                             </div><!-- /.dropdown-menu -->
                         </li><!-- /.searchbox -->
 
-
                         @if(Auth::check())
-                            <li>
-                                <a title="{{Auth::user()->full_name}}" href="#"><i class="icon icon-user"></i></a>
-                            </li>
+                            <li class="dropdown searchbox bewear-dropdown">
+                                <a href="#" data-hover="dropdown"
+                                   class="no-drop-icon dropdown-toggle"
+                                   data-toggle="dropdown">
+                                    <i
+                                        class="icon icon-user">
+                                    </i>
+                                </a>
+                                <div class="dropdown-menu bewear-dropdown-menu">
+                                    <ul class="list-group">
+                                        @if(Auth::user()->hasRole(['Admin','Write','Super-Admin']))
+                                            <li class="list-group-item">
+                                                <a href="{{url('admin/')}}">Quản trị</a>
+                                            </li>
+                                        @endif
+                                        <li class="list-group-item">
+                                            {{Auth::user()->full_name}}
+                                        </li>
+                                        <li class="list-group-item">
+                                            <form method="post" action="{{route('logout')}}">
+                                                @csrf
+                                                <button>Đăng xuất</button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div><!-- /.dropdown-menu -->
+                            </li><!-- /.searchbox -->
+
+                            {{--                            <li>--}}
+                            {{--                                <a title="{{Auth::user()->full_name}}" href="#"><i class="icon icon-user"></i></a>--}}
+                            {{--                            </li>--}}
                         @else
-                            <li>
+                            <li title="Đăng nhập">
                                 <a href="{{route('login')}}">
                                     <i class="icon icon-user"></i>
                                 </a>

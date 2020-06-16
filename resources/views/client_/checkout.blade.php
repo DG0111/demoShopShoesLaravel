@@ -4,8 +4,7 @@
     <div class="page-header">
         <div class="container">
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shopping Bag</a></li>
+                <li><a href="{{route('home')}}">Home</a></li>
                 <li class="active">Checkout</li>
             </ol>
         </div>
@@ -21,34 +20,42 @@
                         @csrf
                         <div class="form-group">
                             <label for="first-name">Họ</label>
-                            <input name="first_name" type="text" class="form-control" id="first-name">
+                            <input value="{{ old('first_name') }}" name="first_name" type="text" class="form-control" id="first-name">
+                            <span class="text-danger">{{$errors->first('first_name')}}</span>
                         </div>
                         <div class="form-group">
                             <label for="last-name">Tên</label>
-                            <input name="last_name" type="text" class="form-control" id="first-name">
+                            <input value="{{ old('last_name') }}" name="last_name" type="text" class="form-control" id="first-name">
+                            <span class="text-danger">{{$errors->first('last_name')}}</span>
+
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" name="email" class="form-control" id="email">
+                            <input value="{{ old('email') }}" type="email" name="email" class="form-control" id="email">
+                            <span class="text-danger">{{$errors->first('email')}}</span>
+
                         </div>
                         <div class="form-group">
                             <label for="street-address">Địa chỉ</label>
-                            <input type="text" name="address" class="form-control" id="street-address">
+                            <input value="{{ old('address') }}" type="text" name="address" class="form-control" id="street-address">
+                            <span class="text-danger">{{$errors->first('address')}}</span>
+
                         </div>
                         <div class="form-group">
                             <label for="street-address">Số điện thoại</label>
-                            <input type="text" name="number" class="form-control" id="street-address">
+                            <input value="{{ old('number_phone') }}" type="text" name="number_phone" class="form-control" id="street-address">
+                            <span class="text-danger">{{$errors->first('number_phone')}}</span>
                         </div>
-{{--                        <div class="form-group checkbox">--}}
-{{--                            <label>--}}
-{{--                                <input type="checkbox"> Create an account for later use--}}
-{{--                            </label>--}}
-{{--                        </div>--}}
-{{--                        <div class="checkbox">--}}
-{{--                            <label>--}}
-{{--                                <input type="checkbox"> Ship to the same address--}}
-{{--                            </label>--}}
-{{--                        </div>--}}
+                        {{--                        <div class="form-group checkbox">--}}
+                        {{--                            <label>--}}
+                        {{--                                <input type="checkbox"> Create an account for later use--}}
+                        {{--                            </label>--}}
+                        {{--                        </div>--}}
+                        {{--                        <div class="checkbox">--}}
+                        {{--                            <label>--}}
+                        {{--                                <input type="checkbox"> Ship to the same address--}}
+                        {{--                            </label>--}}
+                        {{--                        </div>--}}
                         <div class="checkout-action text-right">
                             <button type="submit" class="btn btn-primary">Đặt Hàng Ngay</button>
                         </div>
@@ -113,7 +120,7 @@
                                                     Quantity
                                                     <input placeholder="quantity"
                                                            onchange="updateQuantity({{$id}}, this)"
-                                                           value="{{$pro['quantity']}}" type="text">
+                                                           value="{{$pro['quantity']}}" type="number">
                                                 </li>
                                                 <li>Size : {{$pro['size']}}</li>
                                                 <li>
@@ -156,19 +163,26 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         function updateQuantity(id, value) {
-            console.log(id);
-            console.log(value.value);
-            axios.post('update-cart', { // <== use axios.post
-                _method: 'patch',
-                id: id,
-                quantity: value.value
-            })
-                .then(function (response) {
-                    window.location.reload();
+
+            if (value.value < 1) {
+                value.value = 1;
+            } else if (value.value > 10) {
+                value.value = 1;
+            } else if (Number.isInteger(value.value)) {
+                value.value = 2;
+            } else {
+                axios.post('update-cart', { // <== use axios.post
+                    _method: 'patch',
+                    id: id,
+                    quantity: value.value
                 })
-                .catch(function (error) {
-                    console.log(error);
-                });
+                    .then(function (response) {
+                        window.location.reload();
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            }
         }
     </script>
 @stop

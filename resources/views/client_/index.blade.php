@@ -104,9 +104,6 @@
                                             </a>
                                         </div><!-- .image -->
                                         <div class="product-info m-t-20 text-center">
-                                            <a class="quick-view uppercase" data-toggle="modal"
-                                               data-target=".bs-example-modal-lg"><i
-                                                    class="icon icon-more-colors-product"></i>Xem Ngay</a>
                                             <h5 class="name uppercase">
                                                 <a href="{{route('detailProduct',$pro->slug)}}">
                                                     {{$pro->name}}
@@ -144,9 +141,6 @@
                                                      alt=""></a>
                                         </div><!-- .image -->
                                         <div class="product-info m-t-20 text-center">
-                                            <a class="quick-view uppercase" data-toggle="modal"
-                                               data-target=".bs-example-modal-lg">
-                                                <i class="icon icon-more-colors-product"></i> Xem Ngay</a>
                                             <h5 class="name uppercase"><a href="{{route('detailProduct',$pro->slug)}}">{{$pro->name}}</a></h5>
                                             <div class="product-price">
                                                 <ins><span class="amount">$ {{$pro->price}}</span></ins>

@@ -71,7 +71,7 @@
                                     <div class="quantity-holder">
                                         <span class="key">Số lượng:</span>
                                         <input type="number" class="txt txt-qty" title="Qty" value="1" name="quantity"
-                                               min="1" step="1">
+                                               min="1" max="10" required>
                                     </div>
                                     <button type="submit" class="btn btn-primary single-add-cart-button">Thêm vào giỏ
                                         hàng

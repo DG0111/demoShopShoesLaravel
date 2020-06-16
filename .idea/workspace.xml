@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72cf5e7d-af0a-47ed-974b-5c404aa2cfe0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/client_/checkout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client_/checkout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_22_171803_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_22_171803_create_orders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_22_172224_create_order_detail_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_22_172224_create_order_detail_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_25_074020_add_fk_order_detail_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_25_074020_add_fk_order_detail_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_25_074421_add_fk_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_25_074421_add_fk_orders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_/layouts/_navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_/layouts/_navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_/layouts/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_/layouts/_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client_/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/checkout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/client_/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/client_/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/layouts/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/client_/layouts/layout_master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/layouts/layout_master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/client_/product-simple.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/product-simple.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +26,20 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -237,7 +255,9 @@
       <workItem from="1591922201213" duration="76000" />
       <workItem from="1591959279918" duration="19032000" />
       <workItem from="1592040955617" duration="16302000" />
-      <workItem from="1592137139495" duration="8177000" />
+      <workItem from="1592137139495" duration="8231000" />
+      <workItem from="1592212266207" duration="6491000" />
+      <workItem from="1592303037841" duration="7078000" />
     </task>
     <task id="LOCAL-00001" summary="Xong Edit Product">
       <created>1591176918398</created>
@@ -295,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592031171851</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="xong giỏ hàng. Nhưng chưa lưu check out vào cơ sở dữ liệu được">
+      <created>1592151944548</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1592151944548</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +346,8 @@
     <MESSAGE value="Đổ sản phẩm ra client" />
     <MESSAGE value="làm phân quyền bằng thư viện" />
     <MESSAGE value="làm phân quyền bằng thư viện xong sơ sơ" />
-    <option name="LAST_COMMIT_MESSAGE" value="làm phân quyền bằng thư viện xong sơ sơ" />
+    <MESSAGE value="xong giỏ hàng. Nhưng chưa lưu check out vào cơ sở dữ liệu được" />
+    <option name="LAST_COMMIT_MESSAGE" value="xong giỏ hàng. Nhưng chưa lưu check out vào cơ sở dữ liệu được" />
   </component>
   <component name="WindowStateProjectService">
     <state x="640" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591977260648">
@@ -327,10 +355,10 @@
     </state>
     <state x="2003" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591865725124" />
     <state x="640" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1591977260648" />
-    <state x="483" y="0" key="CommitChangelistDialog2" timestamp="1592031169824">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="1684" y="0" key="CommitChangelistDialog2" timestamp="1592151942722">
+      <screen x="1366" y="0" width="1360" height="728" />
     </state>
-    <state x="1684" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591922248207" />
+    <state x="1684" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592151942722" />
     <state x="483" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592031169824" />
     <state width="1317" height="179" key="GridCell.Tab.0.bottom" timestamp="1590637860312">
       <screen x="1366" y="0" width="1360" height="728" />
@@ -366,11 +394,11 @@
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1590763342951" />
     <state width="509" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1590711587223" />
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1592137243882">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="1755" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1592303042052">
+      <screen x="1366" y="0" width="1360" height="728" />
     </state>
     <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1592137243882" />
-    <state x="1755" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591922201378" />
+    <state x="1755" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592303042052" />
     <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1592040962872" />
     <state x="1852" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591690417870">
       <screen x="1366" y="0" width="1360" height="728" />
@@ -380,25 +408,29 @@
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
     <state x="1857" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591177064408" />
-    <state x="13" y="188" width="571" height="548" key="dock-window-1" timestamp="1591974606002">
+    <state x="310" y="93" width="1035" height="544" key="dock-window-1" timestamp="1592303856801">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="210" y="0" width="1166" height="686" key="dock-window-1/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1591859385057" />
-    <state x="331" y="146" width="929" height="580" key="dock-window-1/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591867972642" />
+    <state x="310" y="93" width="1035" height="544" key="dock-window-1/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592303856801" />
     <state x="13" y="188" width="571" height="548" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1591974606002" />
-    <state x="0" y="268" width="894" height="548" key="dock-window-2" timestamp="1591974994856">
+    <state x="300" y="34" width="1035" height="544" key="dock-window-2" timestamp="1592303856801">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="404" y="2" width="929" height="716" key="dock-window-2/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591895530531" />
+    <state x="300" y="34" width="1035" height="544" key="dock-window-2/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592303856801" />
     <state x="0" y="268" width="894" height="548" key="dock-window-2/0.0.1366.728@0.0.1366.728" timestamp="1591974994856" />
-    <state x="1702" y="162" key="run.anything.popup" timestamp="1591020777912">
+    <state x="397" y="0" width="985" height="722" key="dock-window-3" timestamp="1592308069231">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="397" y="0" width="985" height="722" key="dock-window-3/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592308069231" />
+    <state x="1702" y="162" key="run.anything.popup" timestamp="1592232886583">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
-    <state x="1702" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1591020777912" />
-    <state x="1710" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1592150849222">
+    <state x="1702" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592232886583" />
+    <state x="1710" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1592233046201">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
-    <state x="1710" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592150849222" />
+    <state x="1710" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592233046201" />
     <state x="553" y="38" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1592121027835" />
   </component>
   <component name="XDebuggerManager">
@@ -465,7 +497,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/client_/index.blade.php</url>
-          <line>134</line>
+          <line>131</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -490,13 +522,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/client_/checkout.blade.php</url>
-          <line>154</line>
+          <line>161</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/client_/checkout.blade.php</url>
-          <line>152</line>
+          <line>159</line>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/admin_/layouts/_sidebar.blade.php</url>
+          <line>67</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

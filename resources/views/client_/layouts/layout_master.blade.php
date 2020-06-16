@@ -236,7 +236,7 @@
 @include('client_.layouts.footer')
 <div id="shopping-cart-summary" class="navmenu-shopping-cart navmenu navmenu-default navmenu-fixed-right offcanvas">
     <header>
-        <h3 class="section-title">Items
+        <h3 class="section-title">Sản phẩm của bạn
             <span class="item-count">
                 @if(session('cart'))
                     @php
@@ -260,8 +260,8 @@
                 @php $total = 0 @endphp
                 @if(session('cart'))
                     @foreach(session('cart') as $id => $pro)
-                            @php $total += $pro['price'] * $pro['quantity'] @endphp
-                            <li>
+                        @php $total += $pro['price'] * $pro['quantity'] @endphp
+                        <li>
                             <div class="product">
                                 <div class='row'>
                                     <div class="col-md-4 col-sm-4">
@@ -286,14 +286,15 @@
                                 </div>
                                 <form class="delete" action="{{route('delete-product-in-cart', $id)}}"
                                       method="post">
-                                    <button style="border: none; background: none;" type="submit" class="remove-link"></button>
-{{--                                    <input--}}
-{{--                                        style="font-size: 12px"--}}
-{{--                                        id="delete"--}}
-{{--                                        class="remove-link"--}}
-{{--                                        type="submit"--}}
-{{--                                        onclick="deleteProduct()"--}}
-{{--                                        value="Delete"/>--}}
+                                    <button style="border: none; background: none;" type="submit"
+                                            class="remove-link"></button>
+                                    {{--                                    <input--}}
+                                    {{--                                        style="font-size: 12px"--}}
+                                    {{--                                        id="delete"--}}
+                                    {{--                                        class="remove-link"--}}
+                                    {{--                                        type="submit"--}}
+                                    {{--                                        onclick="deleteProduct()"--}}
+                                    {{--                                        value="Delete"/>--}}
                                     @method('delete')
                                     @csrf
                                 </form>
@@ -306,11 +307,12 @@
             </ul>
 
             <div class="cart-summary text-center inner-top-50">
-                <h5 class="cart-total">Your Total</h5>
+                <h5 class="cart-total">Tổng tiền</h5>
                 <p class="cart-total-price">${{$total}}</p>
-                <p class="instruction">shipping costs are calculated at the next step,before you pay.</p>
-                <a class="btn btn-primary btn-uppercase continue-shopping" href="{{route('check-out')}}">continue to
-                    checkout</a>
+                @if(session('cart'))
+                    <a class="btn btn-primary btn-uppercase continue-shopping" href="{{route('check-out')}}">Đặt
+                        Hàng</a>
+                @endif
             </div>
         </div>
     </div>
@@ -337,6 +339,39 @@
 <script src="{{asset('client_/assets/js/pace.min.js')}}"></script>
 <script src="{{asset('client_/assets/js/odometer.min.js')}}"></script>
 <script src="{{asset('client_/assets/js/scripts.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<script>
+        @if (Session::get('success'))
+    const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            onOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+
+    Toast.fire({
+        icon: 'Thành Công',
+        title: '{{Session::get('success')}}'
+    });
+    @endif
+    @if (Session::get('err'))
+    Swal.fire({
+        title: '{{Session::get('err')}}',
+        showClass: {
+            popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutUp'
+        }
+    });
+    @endif
+</script>
 @yield('script')
 </body>
 </html>

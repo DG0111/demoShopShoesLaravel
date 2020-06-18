@@ -44,7 +44,7 @@ class HomeController extends Controller
     {
         $pro = Product::where('slug', '=', $slug)->first();
 
-        $comments = Comment::where('product_id',$pro->id)
+        $comments = Comment::where('product_id', $pro->id)
             ->orderBy('created_at', 'desc')
             ->paginate(5);
 
@@ -56,7 +56,7 @@ class HomeController extends Controller
             ->limit(8)
             ->get();
         $proSuggest = Product::all()->random(8);
-        return view('client_.product-simple', compact('categories','comments', 'pro', 'productRelated', 'proSuggest'));
+        return view('client_.product-simple', compact('categories', 'comments', 'pro', 'productRelated', 'proSuggest'));
 
     }
 
@@ -69,6 +69,18 @@ class HomeController extends Controller
             ->orderBy('created_at', 'desc')
             ->paginate(12);
         return view('client_.catalog', compact('categories', 'cate', 'product'));
+    }
+
+
+    //search
+    public function search(Request $request)
+    {
+        $product = Product::where('name', 'LIKE', '%' . $request->key . '%')
+            ->orWhere('description', 'LIKE', '%' . $request->key . '%')
+            ->paginate(12);
+
+        $categories = Category::all();
+        return view('client_.catalog', compact('categories', 'product'));
     }
 
 }

@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('Admin')->middleware(['auth'])->middleware(['role:Super-Admin|Admin|Write'])->prefix('admin')->group(function () {
     Route::get('', 'DashboardController@showDashboard');
     Route::resource('product', 'ProductController');
+    Route::patch('search-product','ProductController@search')->name('search-product');
+
     Route::resource('order', 'OrderController');
     Route::resource('comment', 'CommentController');
     Route::resource('user', 'UserController');
@@ -49,6 +51,9 @@ Route::patch('update-cart', 'CartController@update');
 Route::post('save-comment', 'CommentController@created')->name('save-comment');
 
 Route::post('create-order', 'OrderController@create')->name('create-order');
+
+//search
+Route::post('search', 'HomeController@search')->name('search');
 
 
 

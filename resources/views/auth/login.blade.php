@@ -43,12 +43,12 @@
                                 <label class="label">Password</label>
                                 <div class="input-group">
                                     <input type="password" name="password" class="form-control" placeholder="*********">
-                                    <div class="input-group-append">
-                        <span class="input-group-text">
-                          <i class="mdi mdi-check-circle-outline"></i>
-                        </span>
-                                    </div>
                                 </div>
+                                <span class="text-danger">
+                                        @error('password')
+                                    {{ $message }}
+                                    @enderror
+                                    </span>
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary submit-btn btn-block">Login</button>

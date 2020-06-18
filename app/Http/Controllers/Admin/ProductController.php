@@ -14,6 +14,7 @@ use App\User;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
+use phpDocumentor\Reflection\Types\Object_;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
@@ -203,6 +204,26 @@ class ProductController extends Controller
         $pro::destroyImageSize();
         $pro->delete();
         return redirect('admin/product')->with(['data' => 'Xóa Sản Phẩm Thành Công ^)^']);
+
+    }
+
+
+    public function search(Request $request)
+    {
+        $pro = Product::where('name', 'LIKE', '%' . $request->key . '%')
+            ->orWhere('description', 'LIKE', '%' . $request->key . '%')->get();
+
+        $arr = array();
+
+        foreach ($pro as $v) {
+            $v->image->url;
+            $v->categories->name;
+            $v->sizes;
+            array_push($arr, $v);
+        }
+
+
+        return $arr;
 
     }
 }

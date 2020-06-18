@@ -9,7 +9,14 @@
                             <div class="control-bar">
                                 <ul class="breadcrumb">
                                     <li><a href="{{route('home')}}">Home</a></li>
-                                    <li class="active">{{$cate->name}}</li>
+                                    <li class="active">
+                                        @if(isset($cate))
+                                            {{$cate->name}}
+                                        @else
+                                            Search
+                                        @endif
+                                    </li>
+
                                 </ul><!-- /.breacrumb -->
                                 {{--                                <ul class="listing-options">--}}
                                 {{--                                    <li class="sort-by">--}}
@@ -50,11 +57,13 @@
                                                             href="{{route('detailProduct',$value->slug)}}">{{$value->name}}</a>
                                                     </h5>
                                                     <div class="product-price">
-                                                        <ins><span class="amount">${{$value->promotion_price}}</span></ins>
+                                                        <ins><span class="amount">${{$value->promotion_price}}</span>
+                                                        </ins>
                                                     </div><!-- .product-price -->
                                                     <div class="buttons-holder m-t-20">
                                                         <div class="add-cart-holder">
-                                                            <a title="Add to cart" href="{{route('detailProduct',$value->slug)}}"
+                                                            <a title="Add to cart"
+                                                               href="{{route('detailProduct',$value->slug)}}"
                                                                class="cart-button btn btn-primary">
                                                                 <span>Xem chi tiết</span>
                                                             </a>
@@ -65,7 +74,12 @@
                                         </div>
                                     @endforeach
                                 @else
-                                    Hiện tại chung tôi đang hết sản phẩm trong danh mục {{$cate->name}}
+                                    @if(isset($cate))
+                                        Hiện tại chung tôi đang hết sản phẩm trong danh mục
+                                        {{$cate->name}}
+                                    @else
+                                        Hiện tại chúng tôi không có sản phẩm bạn tìm kiếm
+                                    @endif
                                 @endif
                             </div><!-- /.catalog-products -->
                         </div>
@@ -76,7 +90,9 @@
                                     <div class="body">
                                         <ul>
                                             @foreach($categories as $value)
-                                                <li><a href="{{route('product_cate',$value->slug)}}">{{$value->name}}</a></li>
+                                                <li>
+                                                    <a href="{{route('product_cate',$value->slug)}}">{{$value->name}}</a>
+                                                </li>
                                             @endforeach
                                         </ul>
                                     </div><!-- /.body -->

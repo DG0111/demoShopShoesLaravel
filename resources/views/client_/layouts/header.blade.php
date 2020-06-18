@@ -47,8 +47,9 @@
                                 </i>
                             </a>
                             <div class="dropdown-menu bewear-dropdown-menu">
-                                <form id="search" class="navbar-form search" role="search">
-                                    <input type="search" class="form-control" placeholder="Type to search">
+                                <form id="search" action="{{route('search')}}" class="navbar-form search" method="POST" role="search">
+                                    @csrf
+                                    <input type="search" name="key" class="form-control" placeholder="Type to search">
                                     <button type="submit"
                                             class="btn btn-primary btn-submit icon icon-search"></button>
                                 </form>

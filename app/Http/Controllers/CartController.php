@@ -50,6 +50,9 @@ class CartController extends Controller
 
     public function addToCart(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'quantity' => 'required|integer|min:1|max:10',
+        ]);
 
         $product = Product::find($id);
 

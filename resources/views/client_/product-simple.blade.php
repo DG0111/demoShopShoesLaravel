@@ -21,15 +21,12 @@
                                         <ul id="product-images">
                                             @foreach($pro->images as $value2)
                                                 <li>
-                                                    <a href="assets/images/products/big-image.jpg" data-title="Gallery"
-                                                       data-lightbox="image-1">
-                                                        <img
-                                                            style="display: block;margin-left: auto;margin-right: auto;width: 50%;"
-                                                            src="{{asset('files/'.$value2->url)}}" data-title="Gallery"
-                                                            data-lightbox="image-1"
-                                                            data-echo="{{asset('files/'.$value2->url)}}" alt=""/>
-                                                        <span class="zoom-overlay"></span>
-                                                    </a>
+                                                    <img
+                                                        style="display: block;margin-left: auto;margin-right: auto;width: 50%;"
+                                                        src="{{asset('files/'.$value2->url)}}" data-title="Gallery"
+                                                        data-lightbox="image-1"
+                                                        data-echo="{{asset('files/'.$value2->url)}}" alt=""/>
+                                                    <span class="zoom-overlay"></span>
                                                 </li>
                                             @endforeach
                                         </ul>
@@ -41,16 +38,6 @@
                     <div class="col-sm-6 col-lg-6 body-holder body-holder-style-1">
                         <div class="product-info">
                             <h1 class="single-product-title">{{$pro->name}}</h1>
-                            <div class="social-icons-holder">
-                                <ul class="social-icon-list clearfix">
-                                    <li><a class="icon icon-facebook31" title="Facebook"
-                                           href="http://www.facebook.com/transvelo"></a></li>
-                                    <li><a class="icon icon-twitter21" title="Twitter" href="#"></a></li>
-                                    <li><a class="icon icon-linkedin11" title="Pinterest" href="#"></a></li>
-                                    <li><a class="icon icon-google29" title="Instagram" href="#"></a></li>
-
-                                </ul>
-                            </div>
                             <br>
                             <form class="cart" method="post" action="{{route('add-cart',$pro->id)}}">
                                 @csrf
@@ -81,8 +68,9 @@
                             <div id="product-simple-tab">
                                 <div class="tabs">
                                     <ul class="nav nav-tabs nav-tab-cells">
-                                        <li class="active"><a data-toggle="tab" href="#description">Description</a></li>
-                                        <li><a data-toggle="tab" href="#reviews">Reviews (4)</a></li>
+                                        <li class="active"><a data-toggle="tab" href="#description">Mô tả</a></li>
+                                        <li><a data-toggle="tab" href="#reviews">Đánh giá ({{$comments->count()}})</a>
+                                        </li>
                                     </ul>
 
                                     <div class="tab-content bewear-tab-content">
@@ -92,64 +80,43 @@
                                             </p>
                                         </div>
                                         <div id="reviews" class="tab-pane">
-                                            <article class="review">
-                                                <div class="header">
-                                                    <div class="star-rating gray" title="Rated 5.00 out of 5">
-												<span style="width:80%">
-													<strong class="rating">5.00</strong>
-													out of 5
-												</span>
-                                                    </div>
-                                                    <h4 class="author">Richard Doe</h4>
-                                                    <span class="date">Aug 7, 2013</span>
-                                                </div>
-                                                <p class="text">
-                                                    Choupette Mulberry dark red lipstick crop button up chunky sole
-                                                    chambray shirt
-                                                    maxi skirt vintage Levi shorts. Loafers 90s collar indigo denim
-                                                    silver collar
-                                                    round sunglasses. Cashmere skirt peach Miu Miu Bag 'N' Noun leather
-                                                    shorts
-                                                    oversized printed clashing patterns. Tulle printed jacket sheer
-                                                    Prada Saffiano
-                                                    white Converse.
-                                                </p>
-                                            </article>
-                                            <article class="review">
-                                                <div class="header">
-                                                    <div class="star-rating gray" title="Rated 5.00 out of 5">
-												<span style="width:80%">
-													<strong class="rating">5.00</strong>
-													out of 5
-												</span>
-                                                    </div>
-                                                    <h4 class="author">Richard Doe</h4>
-                                                    <span class="date">Aug 3, 2013</span>
-                                                </div>
-                                                <p class="text">
-                                                    Leather jacket pastels backpack neutral green white. Strong eyebrows
-                                                    washed out
-                                                    Chanel. leggings skinny jeans Missoni capsule clutch cotton.
-                                                </p>
-                                            </article>
-                                            <form class="review-form">
-                                                <label class="raty-label">
-                                                    Your rating for this item
-                                                </label>
-                                                <div class="star-rating gray" title="Rated 5.00 out of 5">
-											<span style="width:80%">
-												<strong class="rating">5.00</strong>
-												out of 5
-											</span>
-                                                </div>
+                                            <div id="commentDiv">
+                                                @if(!empty($comments) && $comments->count())
+                                                    @foreach($comments as $c)
+                                                        <article class="review">
+                                                            <div class="header">
+                                                                <h4 class="author">
+                                                                    {{$c->user->full_name}}</h4>
+                                                                <span
+                                                                    class="date">{{date('M d, Y', strtotime($c->create_date))}}</span>
+                                                            </div>
+                                                            <p class="text">
+                                                                {{$c->content}}
+                                                            </p>
+                                                        </article>
+                                                    @endforeach
+                                                @else
+                                                    Không có đánh giá nào cho sản phẩm này
+                                                @endif
+                                            </div>
 
-                                                <div class="form-group">
-                                                    <label for="review">Your review</label>
-                                                    <textarea rows="6" name="review" id="review"
-                                                              class="form-control"></textarea>
+                                            {{ $comments->links() }}
+                                            <hr>
+                                            @if(Auth::check())
+                                                <div>
+                                                    <label class="raty-label">
+                                                        Bạn hãy cho đánh giá về sản phẩm
+                                                    </label>
+                                                    <div class="form-group">
+                                                        <label for="review">Đánh giá của bạn <span class="text-danger"
+                                                                                                   id="err"></span></label>
+                                                        <textarea rows="6" name="review" id="review"
+                                                                  class="form-control texComment"></textarea>
+                                                    </div>
+                                                    <button class="btn btn-primary submit" type="submit">Đánh giá
+                                                    </button>
                                                 </div>
-                                                <button class="btn btn-primary" type="submit">Submit review</button>
-                                            </form>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -163,18 +130,14 @@
             <div role="tabpanel">
                 <div class="tab-nav-holder single-product-tab inner-bottom-50">
                     <ul id="single-product-tabs" class="nav nav-tabs uppercase" role="tablist">
-                        <li role="presentation" class="active">
-                            <a href="#wear-with" data-transition-type="backSlide" role="tab"
-                               data-toggle="tab">Sản phẩm cùng hãng</a>
-                        </li>
                         <li role="presentation"><a href="#related-products"
-                                                                  data-transition-type="backSlide" role="tab"
-                                                                  data-toggle="tab">Gợi ý cho bạn</a></li>
+                                                   data-transition-type="backSlide" role="tab"
+                                                   data-toggle="tab">Gợi ý cho bạn</a></li>
                     </ul>
                 </div>
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane" id="wear-with">
-                        <div class="single-product-wear-it wow fadeInUp">
+                    <div role="tabpanel" class="tab-pane active" id="related-products">
+                        <div class="single-product-related-products wow fadeInUp">
                             @foreach($productRelated as $value)
                                 <div class="item wear-products">
                                     <div class='product-holder'>
@@ -193,48 +156,13 @@
                                                     <a href="{{route('detailProduct',$value->slug)}}">{{$value->name}}</a>
                                                 </h5>
                                                 <div class="product-price">
-                                                    <ins><span class="amount">${{$value->price}}</span></ins>
+                                                    <ins><span class="amount">VNĐ{{$value->promotion_price}}</span>
+                                                    </ins>
                                                 </div><!-- .product-price -->
                                                 <div class="buttons-holder m-t-20">
                                                     <div class="add-cart-holder">
-                                                        <a title="Add to cart" href="{{route('detailProduct',$value->slug)}}"
-                                                           class="cart-button btn btn-primary">
-                                                            <span>Xem chi tiết</span>
-                                                        </a>
-                                                    </div><!-- .add-cart-holder -->
-                                                </div><!-- .buttons-holder -->
-                                            </div><!-- .product-info -->
-                                        </div><!-- .product -->
-                                    </div><!-- .product-holder -->
-                                </div><!-- /.wear-products -->
-                            @endforeach
-                        </div>
-                    </div><!-- /.tab-pane -->
-                    <div role="tabpanel" class="tab-pane active" id="related-products">
-                        <div class="single-product-related-products wow fadeInUp">
-                            @foreach($proSuggest as $value)
-                                <div class="item wear-products">
-                                    <div class='product-holder'>
-                                        <div class="product">
-                                            <div class="image">
-                                                <a href="{{route('detailProduct',$value->slug)}}">
-                                                    <img class="img-responsive"
-                                                         width="252"
-                                                         src="{{asset('files/'.$value->image->url)}}"
-                                                         alt="">
-                                                </a>
-                                            </div><!-- .image -->
-                                            <div class="product-info m-t-20 text-center">
-
-                                                <h5 class="name uppercase">
-                                                    <a href="{{route('detailProduct',$value->slug)}}">{{$value->name}}</a>
-                                                </h5>
-                                                <div class="product-price">
-                                                    <ins><span class="amount">${{$value->price}}</span></ins>
-                                                </div><!-- .product-price -->
-                                                <div class="buttons-holder m-t-20">
-                                                    <div class="add-cart-holder">
-                                                        <a title="Add to cart" href="{{route('detailProduct',$value->slug)}}"
+                                                        <a title="Add to cart"
+                                                           href="{{route('detailProduct',$value->slug)}}"
                                                            class="cart-button btn btn-primary">
                                                             <span>Xem chi tiết</span>
                                                         </a>
@@ -250,4 +178,52 @@
                 </div><!-- /.tab-content -->
             </div><!-- /.tabpanel -->
         </div><!-- /.containers -->
+    </div>
+@stop
+@section('script')
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"
+            integrity="sha256-4HOrwHz9ACPZBxAav7mYYlbeMiAL0h6+lZ36cLNpR+E=" crossorigin="anonymous"></script>
+
+    <script>
+
+        let comment = document.querySelector('.submit');
+        comment.onclick = () => {
+            let dateNow = Date.now();
+            let formatted = moment(dateNow).format("MMM d, YYYY");
+
+            let commentDiv = document.querySelector('#commentDiv');
+            let err = document.querySelector('#err');
+            let texComment = document.querySelector('.texComment');
+            if (texComment.value < 6) {
+                err.innerText = 'Đánh giá sản phẩm quá ngắn';
+            } else {
+                axios.post('{{route('save-comment')}}', { // <== use axios.post
+                    idUser: '{{Auth::id()}}',
+                    idProduct: '{{$pro->id}}',
+                    content2: texComment.value
+                })
+                    .then(function (response) {
+                        commentDiv.innerHTML += `
+                        <article class="review">
+                            <div class="header">
+                                <h4 class="author">{{Auth::user()->full_name}}</h4>
+                                <span class="date">${formatted}</span>
+                            </div>
+                            <p class="text">
+                                ${texComment.value}
+                            </p>
+                        </article>
+                    `;
+                        err.innerText = '';
+                        texComment.value = null;
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            }
+
+
+        }
+    </script>
 @stop

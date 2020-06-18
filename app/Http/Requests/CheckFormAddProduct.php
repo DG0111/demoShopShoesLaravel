@@ -27,11 +27,11 @@ class CheckFormAddProduct extends FormRequest
             'category_id' => 'required|integer',
             'name' => 'required|max:50|min:6',
             'description' => 'required|max:255|min:6',
-            'price' => 'required|min:0',
-            'promotion_price' => 'min:0',
-            'quantity' => 'required|min:0',
+            'price' => 'required|integer|min:0',
+            'promotion_price' => 'integer|min:0',
+            'quantity' => 'required|integer|min:0',
             'image_id' => 'required',
-            'image_id.*' => 'image|mimes:jpg,jpeg|max:2048',
+            'image_id.*' => 'image|mimes:jpg,jpeg,png|max:2048',
             'size.*' => 'integer',
             'size' => 'required'
         ];

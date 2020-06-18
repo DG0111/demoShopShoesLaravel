@@ -266,7 +266,7 @@
                                 <div class='row'>
                                     <div class="col-md-4 col-sm-4">
                                         <a href="product-simple.html">
-                                            <img src="{{asset('files/'.$pro['image'])}}"
+                                            <img width="90px" src="{{asset('files/'.$pro['image'])}}"
                                                  alt="">
                                         </a>
                                     </div>
@@ -343,23 +343,24 @@
 
 <script>
         @if (Session::get('success'))
-    const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            onOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        });
+            const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    onOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                });
 
-    Toast.fire({
-        icon: 'Thành Công',
-        title: '{{Session::get('success')}}'
-    });
+            Toast.fire({
+                icon: 'Thành Công',
+                title: '{{Session::get('success')}}'
+            });
     @endif
+
     @if (Session::get('err'))
     Swal.fire({
         title: '{{Session::get('err')}}',

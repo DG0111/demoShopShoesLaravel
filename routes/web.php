@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 // admin
 //->middleware('auth.admin')
 
-Route::namespace('Admin')->middleware(['auth'])->prefix('admin')->group(function () {
+Route::namespace('Admin')->middleware(['auth'])->middleware(['role:Super-Admin|Admin|Write'])->prefix('admin')->group(function () {
     Route::get('', 'DashboardController@showDashboard');
     Route::resource('product', 'ProductController');
     Route::resource('order', 'OrderController');
@@ -41,11 +41,14 @@ Route::get('san-pham/{slug}', 'HomeController@productCate')->name('product_cate'
 // cart
 
 Route::post('cart/{id}', 'CartController@addToCart')->name('add-cart');
-Route::get('check-out','CartController@showCart')->name('check-out');
-Route::delete('delete-product-in-cart/{id}','CartController@remove')->name('delete-product-in-cart');
-Route::patch('update-cart', 'CartController@update');
+Route::get('check-out', 'CartController@showCart')->name('check-out');
+Route::delete('delete-product-in-cart/{id}', 'CartController@remove')->name('delete-product-in-cart');
 
-Route::post('create-order','OrderController@create')->name('create-order');
+Route::patch('update-cart', 'CartController@update');
+// comment
+Route::post('save-comment', 'CommentController@created')->name('save-comment');
+
+Route::post('create-order', 'OrderController@create')->name('create-order');
 
 
 

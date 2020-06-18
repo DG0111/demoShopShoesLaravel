@@ -98,7 +98,7 @@
 
                         <th>Tổng tiền</th>
                         <td>
-                            <div class="prices">${{$total}}</div>
+                            <div class="prices">VNĐ{{$total}}</div>
                         </td>
                     </tr>
                     </tfoot>
@@ -146,7 +146,7 @@
                                 </td>
                                 <td>
                                     <div class="prices">
-                                        ${{$pro['price']*$pro['quantity']}}
+                                        VNĐ{{$pro['price']*$pro['quantity']}}
                                     </div>
                                 </td>
                             </tr>
@@ -169,7 +169,7 @@
             } else if (value.value > 10) {
                 value.value = 1;
             } else if (Number.isInteger(value.value)) {
-                value.value = 2;
+                value.value = 1;
             } else {
                 axios.post('update-cart', { // <== use axios.post
                     _method: 'patch',

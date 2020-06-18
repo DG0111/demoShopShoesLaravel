@@ -31,12 +31,13 @@
                                 <label class="label">Email</label>
                                 <div class="input-group">
                                     <input type="text" name="email" class="form-control" placeholder="Username">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">
-                                          <i class="mdi mdi-check-circle-outline"></i>
-                                        </span>
-                                    </div>
+
                                 </div>
+                                <span class="text-danger">
+                                        @error('email')
+                                    {{ $message }}
+                                    @enderror
+                                    </span>
                             </div>
                             <div class="form-group">
                                 <label class="label">Password</label>

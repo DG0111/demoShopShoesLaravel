@@ -50,7 +50,7 @@
                                                             href="{{route('detailProduct',$value->slug)}}">{{$value->name}}</a>
                                                     </h5>
                                                     <div class="product-price">
-                                                        <ins><span class="amount">${{$value->price}}</span></ins>
+                                                        <ins><span class="amount">${{$value->promotion_price}}</span></ins>
                                                     </div><!-- .product-price -->
                                                     <div class="buttons-holder m-t-20">
                                                         <div class="add-cart-holder">

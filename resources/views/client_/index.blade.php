@@ -8,7 +8,7 @@
         <section id="hero" class="home-2-slider wow fadeIn">
             <div id="owl-main" class="owl-carousel">
 
-                <div class="item" style="background-image: url(assets/images/hero/home-2.jpg);">
+                <div class="item" style="background-image: url({{asset('client_/assets/images/hero/home-2.jpg')}});">
                     <div class="container">
                         <div class="caption vertical-center text-left">
 
@@ -23,7 +23,7 @@
                     </div><!-- /.container -->
                 </div><!-- /.item -->
 
-                <div class="item" style="background-image: url(assets/images/hero/home-1.jpg);">
+                <div class="item" style="background-image: url({{asset('client_/assets/images/hero/home-1.jpg')}});">
                     <div class="container">
                         <div class="caption vertical-center text-left">
 
@@ -38,7 +38,7 @@
                     </div><!-- /.container -->
                 </div><!-- /.item -->
 
-                <div class="item" style="background-image: url(assets/images/hero/home-2.jpg);">
+                <div class="item" style="background-image: url({{asset('client_/assets/images/hero/home-2.jpg')}});">
                     <div class="container">
                         <div class="caption vertical-center text-left">
 
@@ -53,7 +53,7 @@
                     </div><!-- /.container -->
                 </div><!-- /.item -->
 
-                <div class="item" style="background-image: url(assets/images/hero/home-1.jpg);">
+                <div class="item" style="background-image: url({{asset('client_/assets/images/hero/home-1.jpg')}});">
                     <div class="container">
                         <div class="caption vertical-center text-left">
 
@@ -110,7 +110,7 @@
                                                 </a>
                                             </h5>
                                             <div class="product-price">
-                                                <ins><span class="amount">$ {{$pro->price}}</span></ins>
+                                                <ins><span class="amount">VNĐ {{$pro->promotion_price}}</span></ins>
                                             </div><!-- .product-price -->
                                             <div class="buttons-holder m-t-20">
                                                 <div class="add-cart-holder">
@@ -143,7 +143,7 @@
                                         <div class="product-info m-t-20 text-center">
                                             <h5 class="name uppercase"><a href="{{route('detailProduct',$pro->slug)}}">{{$pro->name}}</a></h5>
                                             <div class="product-price">
-                                                <ins><span class="amount">$ {{$pro->price}}</span></ins>
+                                                <ins><span class="amount">VNĐ {{$pro->promotion_price}}</span></ins>
                                             </div><!-- .product-price -->
                                             <div class="buttons-holder m-t-20">
                                                 <div class="add-cart-holder">

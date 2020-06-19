@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72cf5e7d-af0a-47ed-974b-5c404aa2cfe0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/assgnmentPhp3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assgnmentPhp3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_/products/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client_/catalog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/catalog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client_/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client_/product-simple.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/product-simple.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_/order/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/client_/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/checkout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -275,7 +263,9 @@
       <workItem from="1592303037841" duration="7905000" />
       <workItem from="1592353302359" duration="9152000" />
       <workItem from="1592379761461" duration="20544000" />
-      <workItem from="1592488599697" duration="11359000" />
+      <workItem from="1592488599697" duration="11850000" />
+      <workItem from="1592526978416" duration="3662000" />
+      <workItem from="1592582200704" duration="1764000" />
     </task>
     <task id="LOCAL-00001" summary="Xong Edit Product">
       <created>1591176918398</created>
@@ -354,7 +344,28 @@
       <option name="project" value="LOCAL" />
       <updated>1592452752031</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Xong search san pham (Không load lai trang)">
+      <created>1592500503026</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1592500503026</updated>
+    </task>
+    <task id="LOCAL-00013" summary="check lại phần add to cart về số lượng">
+      <created>1592500557827</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1592500557827</updated>
+    </task>
+    <task id="LOCAL-00014" summary="install pacgeka excel and scout">
+      <created>1592500596650</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1592500596650</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +391,10 @@
     <MESSAGE value="làm phân quyền bằng thư viện xong sơ sơ" />
     <MESSAGE value="xong giỏ hàng. Nhưng chưa lưu check out vào cơ sở dữ liệu được" />
     <MESSAGE value="Xong comment san pham" />
-    <option name="LAST_COMMIT_MESSAGE" value="Xong comment san pham" />
+    <MESSAGE value="Xong search san pham (Không load lai trang)" />
+    <MESSAGE value="check lại phần add to cart về số lượng" />
+    <MESSAGE value="install pacgeka excel and scout" />
+    <option name="LAST_COMMIT_MESSAGE" value="install pacgeka excel and scout" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2003" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592498013170">
@@ -388,10 +402,10 @@
     </state>
     <state x="2003" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592498013170" />
     <state x="640" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1592410870840" />
-    <state x="483" y="0" key="CommitChangelistDialog2" timestamp="1592452749539">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="1684" y="0" key="CommitChangelistDialog2" timestamp="1592500594314">
+      <screen x="1366" y="0" width="1360" height="728" />
     </state>
-    <state x="1684" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592312725826" />
+    <state x="1684" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592500594314" />
     <state x="483" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592452749539" />
     <state width="1317" height="179" key="GridCell.Tab.0.bottom" timestamp="1590637860312">
       <screen x="1366" y="0" width="1360" height="728" />
@@ -409,10 +423,10 @@
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
     <state width="1317" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1590637860312" />
-    <state x="462" y="198" key="NewPhpClassDialog" timestamp="1592408529408">
+    <state x="462" y="198" key="NewPhpClassDialog" timestamp="1592583352294">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="462" y="198" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1592408529408" />
+    <state x="462" y="198" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1592583352294" />
     <state x="811" y="423" key="NewPhpFileDialog" timestamp="1592406970123">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -431,12 +445,12 @@
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1590763342951" />
     <state width="509" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1590711587223" />
-    <state x="1755" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1592488600408">
-      <screen x="1366" y="0" width="1360" height="728" />
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1592582288441">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1592137243882" />
     <state x="1755" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592488600408" />
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1592379778429" />
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1592582288441" />
     <state x="1852" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591690417870">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
@@ -465,11 +479,11 @@
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
     <state x="1702" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592232886583" />
-    <state x="1710" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1592500036610">
-      <screen x="1366" y="0" width="1360" height="728" />
+    <state x="553" y="38" width="672" height="678" key="search.everywhere.popup" timestamp="1592583312877">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="1710" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592500036610" />
-    <state x="553" y="38" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1592455176960" />
+    <state x="553" y="38" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1592583312877" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

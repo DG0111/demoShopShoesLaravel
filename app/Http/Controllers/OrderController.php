@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportOrder;
 use App\Http\Requests\CheckFormCheckout;
 use App\Order;
 use App\OrderDetail;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OrderController extends Controller
 {
@@ -63,4 +65,10 @@ class OrderController extends Controller
             return redirect()->route('home')->with('success','Đặt hàng thành công');
         }
     }
+
+
+    public function export() {
+        return Excel::download(new ExportOrder, 'recipes.xlsx');
+    }
+
 }

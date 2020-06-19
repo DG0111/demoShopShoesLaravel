@@ -55,5 +55,5 @@ Route::post('create-order', 'OrderController@create')->name('create-order');
 //search
 Route::post('search', 'HomeController@search')->name('search');
 
-
+Route::get('export', 'OrderController@export');
 

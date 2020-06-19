@@ -109,7 +109,7 @@
                                 <td>
                                     <div class="product media">
                                         <div class="media-left">
-                                            <img src="{{$pro['image']}}"
+                                            <img width="100px" src="{{asset('files/'.$pro['image'])}}"
                                                  alt="Product Name" class="media-object">
                                         </div>
                                         <div class="media-body media-middle">

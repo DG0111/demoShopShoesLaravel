@@ -7,7 +7,9 @@
                     <h3>Product</h3>
                 </div>
                 <div class="row">
-                    <button>Xuất ra file excel</button>
+                    <a class="btn btn-info" href="{{ url('export') }}">
+                        Export File
+                    </a>
                 </div>
                 <div class="row">
                     <table class="table table-striped">

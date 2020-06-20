@@ -81,6 +81,7 @@
                                 </label>
                                 <input
                                     value="{{ old('price') }}"
+                                    id="valuePrice"
                                     name="price"
                                     type="number"
                                     class="form-control">
@@ -93,6 +94,7 @@
                                 <input
                                     value="{{ old('promotion_price') }}"
                                     name="promotion_price"
+                                    id="promotion_price"
                                     type="number"
                                     class="form-control">
                             </div>
@@ -203,31 +205,31 @@
                                 </tbody>
                             </table>
                         </div>
-                    <div class="steps clearfix">
-                        <ul role="tablist">
-                            <li role="tab" class="first current" aria-disabled="false" aria-selected="true">
-                                <div class="">
-                                    <h3>Preview Image</h3>
-                                    <div class="" id="showImage">
+                        <div class="steps clearfix">
+                            <ul role="tablist">
+                                <li role="tab" class="first current" aria-disabled="false" aria-selected="true">
+                                    <div class="">
+                                        <h3>Preview Image</h3>
+                                        <div class="" id="showImage">
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                        </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="actions clearfix">
+                            <ul role="menu" aria-label="Pagination">
+                                <li class="disabled" aria-disabled="true">
+                                    <a href="{{url()->previous()}}" role="menuitem">Back</a>
+                                </li>
+                                <li aria-hidden="false" aria-disabled="false">
+                                    <button type="submit" class="btn btn-facebook" role="menuitem">Save</button>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="actions clearfix">
-                        <ul role="menu" aria-label="Pagination">
-                            <li class="disabled" aria-disabled="true">
-                                <a href="{{url()->previous()}}" role="menuitem">Back</a>
-                            </li>
-                            <li aria-hidden="false" aria-disabled="false">
-                                <button type="submit" class="btn btn-facebook" role="menuitem">Save</button>
-                            </li>
-                        </ul>
-                    </div>
+                </form>
             </div>
-            </form>
         </div>
-    </div>
     </div>
 
 @stop
@@ -252,61 +254,70 @@
         }
 
 
-        $(".formAddProduct").validate({
-            debug: false,
-            errorClass: "authError",
-            errorElement: "span",
-            rules: {
-                name: {
-                    required: true,
-                    minlength: 6,
-                    maxlength: 50
+        $(document).ready(() => {
+            $.validator.addMethod('lessThan', function(value, element, param) {
+                var i = parseInt(value);
+                var j = parseInt($(param).val());
+                return i <= j;
+            }, "Giá khuyến mãi phải nhỏ hơn giá sản phẩm");
+
+            $(".formAddProduct").validate({
+                debug: false,
+                errorClass: "authError",
+                errorElement: "span",
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 6,
+                        maxlength: 50
+                    },
+                    description: {
+                        required: true,
+                        minlength: 6,
+                    },
+                    price: {
+                        required: true,
+                        min: 0,
+                        number: true
+                    },
+                    promotion_price: {
+                        min: 0,
+                        number: true,
+                        lessThan: "#valuePrice",
+                    },
+                    quantity: {
+                        required: true,
+                        min: 0,
+                        number: true
+                    }
                 },
-                description: {
-                    required: true,
-                    minlength: 6,
-                },
-                price: {
-                    required: true,
-                    min: 0,
-                    number: true
-                },
-                promotion_price: {
-                    min: 0,
-                    number: true
-                },
-                quantity: {
-                    required: true,
-                    min: 0,
-                    number: true
+                messages: {
+                    name: {
+                        required: 'Sản phẩm phải có tên nhé !',
+                        minlength: 'Quá ÍT kí tự !',
+                        maxlength: 'Quá NHIỀU kí tự !',
+                    },
+                    description: {
+                        required: 'Sản phẩm phải có mô tả nhé !',
+                        minlength: 'Mỏ tả quá ÍT kí tự !',
+                    },
+                    price: {
+                        required: 'Sản phẩm phải có giá nhé !',
+                        min: 'Gía âm rồi kia ! Thích gửi giầy còn gửi thêm cho người ta tiền à ?',
+                        number: 'Chữ số nhé !'
+                    },
+                    promotion_price: {
+                        min: 'Giảm thì cũng đừng có cho tiền người ta chứ',
+                        number: 'Chữ số nhé !',
+                    },
+                    quantity: {
+                        required: 'Số lượng sản phẩm là bao nhiểu ?',
+                        min: 'Số lượng âm thì chịu rồi',
+                        number: 'Chữ số nhé !'
+                    }
                 }
-            },
-            messages: {
-                name: {
-                    required: 'Sản phẩm phải có tên nhé !',
-                    minlength: 'Quá ÍT kí tự !',
-                    maxlength: 'Quá NHIỀU kí tự !',
-                },
-                description: {
-                    required: 'Sản phẩm phải có mô tả nhé !',
-                    minlength: 'Mỏ tả quá ÍT kí tự !',
-                },
-                price: {
-                    required: 'Sản phẩm phải có giá nhé !',
-                    min: 'Gía âm rồi kia ! Thích gửi giầy còn gửi thêm cho người ta tiền à ?',
-                    number: 'Chữ số nhé !'
-                },
-                promotion_price: {
-                    min: 'Giảm thì cũng đừng có cho tiền người ta chứ',
-                    number: 'Chữ số nhé !',
-                },
-                quantity: {
-                    required: 'Số lượng sản phẩm là bao nhiểu ?',
-                    min: 'Số lượng âm thì chịu rồi',
-                    number: 'Chữ số nhé !'
-                }
-            }
-        });
+            });
+        })
 
 
         let inputFile = document.querySelector('#inputFile');

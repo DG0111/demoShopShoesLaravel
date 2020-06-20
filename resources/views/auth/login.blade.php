@@ -25,14 +25,11 @@
             <div class="row w-100">
                 <div class="col-lg-4 mx-auto">
                     <div class="auto-form-wrapper">
-                        <form action="{{ route('login') }}" method="POST">
+                        <form id="formLogin" action="{{ route('login') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label class="label">Email</label>
-                                <div class="input-group">
-                                    <input type="text" name="email" class="form-control" placeholder="Username">
-
-                                </div>
+                                <input type="text" name="email" class="form-control" placeholder="Username">
                                 <span class="text-danger">
                                         @error('email')
                                     {{ $message }}
@@ -41,9 +38,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="label">Password</label>
-                                <div class="input-group">
-                                    <input type="password" name="password" class="form-control" placeholder="*********">
-                                </div>
+                                <input type="password" name="password" class="form-control" placeholder="*********">
                                 <span class="text-danger">
                                         @error('password')
                                     {{ $message }}
@@ -106,5 +101,36 @@
 <script src="admin_/assets/js/shared/settings.js"></script>
 <script src="admin_/assets/js/shared/todolist.js"></script>
 <!-- endinject -->
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<script>
+    $("#formLogin").validate({
+        debug: false,
+        errorClass: "authError",
+        errorElement: "span",
+        rules: {
+            email: {
+                required: true,
+                email: true,
+            },
+            password: {
+                required: true,
+                minlength: 6
+            }
+        },
+        messages: {
+            email: {
+                required: 'Mời bạn điền thông tin email',
+                email: 'Sai định dạng email'
+            },
+            password: {
+                required: 'Mời bạn điền thông tin mật khẩu',
+                minlength: 'mật khẩu quá ngắn'
+            }
+        }
+    });
+</script>
 </body>
 </html>

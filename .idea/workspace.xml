@@ -4,9 +4,12 @@
     <list default="true" id="72cf5e7d-af0a-47ed-974b-5c404aa2cfe0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin_/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_/order/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client_/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client_/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CheckFormAddProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CheckFormAddProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_/products/add-product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_/products/add-product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register-2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register-2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +268,8 @@
       <workItem from="1592379761461" duration="20544000" />
       <workItem from="1592488599697" duration="11850000" />
       <workItem from="1592526978416" duration="3662000" />
-      <workItem from="1592582200704" duration="1764000" />
+      <workItem from="1592582200704" duration="2220000" />
+      <workItem from="1592668599915" duration="3675000" />
     </task>
     <task id="LOCAL-00001" summary="Xong Edit Product">
       <created>1591176918398</created>
@@ -365,7 +369,21 @@
       <option name="project" value="LOCAL" />
       <updated>1592500596650</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Test xong xuất file excel">
+      <created>1592584011046</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1592584011046</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Test xong xuất file excel">
+      <created>1592584033535</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1592584033535</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +412,8 @@
     <MESSAGE value="Xong search san pham (Không load lai trang)" />
     <MESSAGE value="check lại phần add to cart về số lượng" />
     <MESSAGE value="install pacgeka excel and scout" />
-    <option name="LAST_COMMIT_MESSAGE" value="install pacgeka excel and scout" />
+    <MESSAGE value="Test xong xuất file excel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test xong xuất file excel" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2003" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592498013170">
@@ -402,11 +421,11 @@
     </state>
     <state x="2003" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592498013170" />
     <state x="640" y="121" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1592410870840" />
-    <state x="483" y="0" key="CommitChangelistDialog2" timestamp="1592584008883">
+    <state x="483" y="0" key="CommitChangelistDialog2" timestamp="1592584032284">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="1684" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592500594314" />
-    <state x="483" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592584008883" />
+    <state x="483" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592584032284" />
     <state width="1317" height="179" key="GridCell.Tab.0.bottom" timestamp="1590637860312">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
@@ -445,12 +464,12 @@
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1590763342951" />
     <state width="509" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1590711587223" />
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1592582288441">
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1592668611681">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1592137243882" />
     <state x="1755" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592488600408" />
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1592582288441" />
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1592668611681" />
     <state x="1852" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591690417870">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
@@ -479,11 +498,11 @@
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
     <state x="1702" y="162" key="run.anything.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592232886583" />
-    <state x="553" y="38" width="672" height="678" key="search.everywhere.popup" timestamp="1592583312877">
+    <state x="553" y="38" width="672" height="678" key="search.everywhere.popup" timestamp="1592672169854">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="1710" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1592500036610" />
-    <state x="553" y="38" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1592583312877" />
+    <state x="553" y="38" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1592672169854" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -520,12 +539,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/admin_/products/add-product.blade.php</url>
-          <line>104</line>
+          <line>106</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/admin_/products/add-product.blade.php</url>
-          <line>93</line>
+          <line>94</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

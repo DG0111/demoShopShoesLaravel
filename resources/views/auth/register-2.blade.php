@@ -33,16 +33,18 @@
                                 <fieldset>
                                     <div class="form-group">
                                         <label for="firstname">Full name</label>
-                                        <input id="full_name" value="{{ old('full_name') }}" class="form-control" name="full_name" type="text">
+                                        <input id="full_name" value="{{ old('full_name') }}" class="form-control"
+                                               name="full_name" type="text">
                                         @error('full_name')
-                                            <span class="text-danger" role="alert">
+                                        <span class="text-danger" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input id="email" value="{{ old('email') }}" class="form-control" name="email" type="email">
+                                        <input id="email" value="{{ old('email') }}" class="form-control" name="email"
+                                               type="email">
                                         @error('email')
                                         <span class="text-danger" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -51,7 +53,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password</label>
-                                        <input id="password" value="{{ old('password') }}" class="form-control" name="password" type="password">
+                                        <input id="password" value="{{ old('password') }}" class="form-control"
+                                               name="password" type="password">
                                         @error('password')
                                         <span class="text-danger" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -60,7 +63,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="confirm_password">Confirm password</label>
-                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" autocomplete="new-password">
+                                        <input id="password-confirm" type="password" class="form-control"
+                                               name="password_confirmation" autocomplete="new-password">
                                         @error('password_confirmation')
                                         <span class="text-danger" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -103,6 +107,57 @@
 <script src="admin_/assets/js/shared/settings.js"></script>
 <script src="admin_/assets/js/shared/todolist.js"></script>
 <!-- endinject -->
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+<script>
+
+    $(".cmxform").validate({
+        debug: false,
+        errorClass: "authError",
+        errorElement: "span",
+        rules: {
+            email: {
+                required: true,
+                email: true,
+            },
+            password: {
+                required: true,
+                min: 6
+            },
+            full_name: {
+                required: true,
+                min: 6
+            },
+            password_confirmation: {
+                required: true,
+                minlength: 6,
+                equalTo: "#password"
+            }
+        },
+        messages: {
+            email: {
+                required: 'Mời bạn điền thông tin email',
+                email: 'Sai định dạng email'
+            },
+            password: {
+                required: 'Mời bạn điền thông tin mật khẩu',
+                min: 'mật khẩu quá ngắn'
+            },
+            full_name: {
+                required: 'Mời bạn điền thông tin Tên',
+                min: 'Mời bạn điền thông tin Tên',
+            },
+            password_confirmation: {
+                required: 'Mời bạn nhập lại mật khẩu',
+                equalTo: 'Mật khẩu không khớp',
+                minlength: 'Mật khẩu không khớp'
+            }
+        }
+    });
+</script>
 </body>
 </html>
 

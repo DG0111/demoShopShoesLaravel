@@ -66,7 +66,6 @@ class OrderController extends Controller
         }
     }
 
-
     public function export() {
         return Excel::download(new ExportOrder, 'recipes.xlsx');
     }

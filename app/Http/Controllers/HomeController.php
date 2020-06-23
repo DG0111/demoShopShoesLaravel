@@ -7,6 +7,7 @@ use App\Comment;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -81,6 +82,22 @@ class HomeController extends Controller
 
         $categories = Category::all();
         return view('client_.catalog', compact('categories', 'product'));
+    }
+
+
+    public function sendMail(Request $request)
+    {
+        Mail::send([], [],
+            function ($mes) use ($request) {
+//                $s = Swift_Attachment::fromPath('files/del.png');
+                $mes->to($request->email, 'Ho Ten Nguoi Nhan')
+                    ->from('yui.hatano.pornhub@gmail.com', 'BEWEAR')
+                    ->setBody('Cảm ơn Bạn đã đăng kí nhận thông báo về sản phẩm mới nhất bên chúng tối.', 'text/html')
+                    ->setSubject('CẢM ƠN BẠN ĐÃ ĐĂNG KÍ NHẬN THÔNG BÁO');
+            }
+        );
+
+        return redirect()->route('home')->with('success','Đăng kí thông tin thành công. Cảm ơn bạn rất nhiều');
     }
 
 }

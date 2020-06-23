@@ -57,3 +57,7 @@ Route::post('search', 'HomeController@search')->name('search');
 
 Route::get('export', 'OrderController@export');
 
+Route::get('/mail','TestController@sendMail') ->name('Admin.sendMail');
+Route::get('/tft','TestController@tft') ->name('Admin.tft');
+
+Route::post('/sendEmailNewSletter','HomeController@sendMail')->name('home.contact');

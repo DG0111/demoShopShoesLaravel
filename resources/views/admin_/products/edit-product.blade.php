@@ -89,6 +89,7 @@
                                 </label>
                                 <input
                                     value="@if(!old('price')){{$pro->price}}@else{{old('price')}}@endif"
+                                    id="valuePrice"
                                     name="price"
                                     type="number"
                                     class="form-control">
@@ -290,7 +291,8 @@
                                         <h3>Preview Image Old/New</h3>
                                         <div class="" id="showImage">
                                             @foreach($pro->images as $value)
-                                                <img src="{{asset('files/'.$value->url)}}" width="100px" class="mb-1" alt="">
+                                                <img src="{{asset('files/'.$value->url)}}" width="100px" class="mb-1"
+                                                     alt="">
                                             @endforeach
                                         </div>
                                     </div>
@@ -333,100 +335,107 @@
             }
         }
 
+        $(document).ready(() => {
+            $.validator.addMethod('lessThan', function (value, element, param) {
+                var i = parseInt(value);
+                var j = parseInt($(param).val());
+                return i <= j;
+            }, "Giá khuyến mãi phải nhỏ hơn giá sản phẩm");
 
-        $(".formAddProduct").validate({
-            debug: false,
-            errorClass: "authError",
-            errorElement: "span",
-            rules: {
-                name: {
-                    required: true,
-                    minlength: 6,
-                    maxlength: 50
+            $(".formAddProduct").validate({
+                debug: false,
+                errorClass: "authError",
+                errorElement: "span",
+                rules: {
+                    name: {
+                        required: true,
+                        minlength: 6,
+                        maxlength: 50
+                    },
+                    description: {
+                        required: true,
+                        minlength: 6,
+                    },
+                    price: {
+                        required: true,
+                        min: 0,
+                        number: true
+                    },
+                    promotion_price: {
+                        min: 0,
+                        number: true,
+                        lessThan: "#valuePrice",
+                    },
+                    quantity: {
+                        required: true,
+                        min: 0,
+                        number: true
+                    }
                 },
-                description: {
-                    required: true,
-                    minlength: 6,
-                },
-                price: {
-                    required: true,
-                    min: 0,
-                    number: true
-                },
-                promotion_price: {
-                    min: 0,
-                    number: true
-                },
-                quantity: {
-                    required: true,
-                    min: 0,
-                    number: true
-                }
-            },
-            messages: {
-                name: {
-                    required: 'Sản phẩm phải có tên nhé !',
-                    minlength: 'Quá ÍT kí tự !',
-                    maxlength: 'Quá NHIỀU kí tự !',
-                },
-                description: {
-                    required: 'Sản phẩm phải có mô tả nhé !',
-                    minlength: 'Mỏ tả quá ÍT kí tự !',
-                },
-                price: {
-                    required: 'Sản phẩm phải có giá nhé !',
-                    min: 'Gía âm rồi kia ! Thích gửi giầy còn gửi thêm cho người ta tiền à ?',
-                    number: 'Chữ số nhé !'
-                },
-                promotion_price: {
-                    min: 'Giảm thì cũng đừng có cho tiền người ta chứ',
-                    number: 'Chữ số nhé !',
-                },
-                quantity: {
-                    required: 'Số lượng sản phẩm là bao nhiểu ?',
-                    min: 'Số lượng âm thì chịu rồi',
-                    number: 'Chữ số nhé !'
-                }
-            }
-        });
-
-
-        let inputFile = document.querySelector('#inputFile');
-        let showImage = document.querySelector('#showImage');
-        inputFile.onchange = () => {
-            let file = document.querySelector('#inputFile')['files'];
-
-            let inputImageText = document.querySelector('#inputImageText');
-            if (file.length > 7) {
-                Swal.fire('Bạn chỉ được phép chọn 7 ảnh sản phẩm !!!');
-                document.querySelector('#inputFile').value = "";
-                showImage.innerHTML = '';
-            } else {
-                showImage.innerHTML = '';
-                var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
-
-                for (var j = 0; j < file.length; j++) {
-                    if (!allowedExtensions.exec(file[j].name)) {
-                        Swal.fire('Bạn chọn sai tệp (jpg/jpeg/png) !!!');
-                        document.querySelector('#inputFile').value = "";
-                        showImage.innerHTML = '';
+                messages: {
+                    name: {
+                        required: 'Sản phẩm phải có tên nhé !',
+                        minlength: 'Quá ÍT kí tự !',
+                        maxlength: 'Quá NHIỀU kí tự !',
+                    },
+                    description: {
+                        required: 'Sản phẩm phải có mô tả nhé !',
+                        minlength: 'Mỏ tả quá ÍT kí tự !',
+                    },
+                    price: {
+                        required: 'Sản phẩm phải có giá nhé !',
+                        min: 'Gía âm rồi kia ! Thích gửi giầy còn gửi thêm cho người ta tiền à ?',
+                        number: 'Chữ số nhé !'
+                    },
+                    promotion_price: {
+                        min: 'Giảm thì cũng đừng có cho tiền người ta chứ',
+                        number: 'Chữ số nhé !',
+                    },
+                    quantity: {
+                        required: 'Số lượng sản phẩm là bao nhiểu ?',
+                        min: 'Số lượng âm thì chịu rồi',
+                        number: 'Chữ số nhé !'
                     }
                 }
-                ;
+            });
 
-                for (var i = 0; i < file.length; i++) {
-                    let reader = new FileReader();
-                    let baseString;
-                    reader.onloadend = function () {
-                        baseString = reader.result;
-                        showImage.innerHTML += `
+
+            let inputFile = document.querySelector('#inputFile');
+            let showImage = document.querySelector('#showImage');
+            inputFile.onchange = () => {
+                let file = document.querySelector('#inputFile')['files'];
+
+                let inputImageText = document.querySelector('#inputImageText');
+                if (file.length > 7) {
+                    Swal.fire('Bạn chỉ được phép chọn 7 ảnh sản phẩm !!!');
+                    document.querySelector('#inputFile').value = "";
+                    showImage.innerHTML = '';
+                } else {
+                    showImage.innerHTML = '';
+                    var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+
+                    for (var j = 0; j < file.length; j++) {
+                        if (!allowedExtensions.exec(file[j].name)) {
+                            Swal.fire('Bạn chọn sai tệp (jpg/jpeg/png) !!!');
+                            document.querySelector('#inputFile').value = "";
+                            showImage.innerHTML = '';
+                        }
+                    }
+                    ;
+
+                    for (var i = 0; i < file.length; i++) {
+                        let reader = new FileReader();
+                        let baseString;
+                        reader.onloadend = function () {
+                            baseString = reader.result;
+                            showImage.innerHTML += `
                         <img class="m-1" width="100px" src="${baseString}" alt="">
                 `;
-                    };
-                    reader.readAsDataURL(file[i]);
+                        };
+                        reader.readAsDataURL(file[i]);
+                    }
                 }
             }
-        }
 
     </script>
 @stop

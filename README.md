@@ -27,7 +27,7 @@
 
 11. `php artisan serve` chạy chương trình
 
-12. Truy cập `/admin` ~~~~ Email / Mật khẩu : `admin@gmail.com / 123456`
+12. Truy cập `/admin` ~~~~ Email / Mật khẩu : `admin@gmail.com / longcham5`
 
 **Dự án đang trong quá trình phát triển**
 **Ai xem có gì thì xin được góp ý qua `long24265@gmail.com`**
